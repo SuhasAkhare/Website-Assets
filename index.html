@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aarya Architects — BIM Service Providers</title>
+  <meta name="description" content="Aarya Architects — BIM-focused studio providing Revit modeling, clash coordination, parametric families, and visualization. Focus on design, we handle the delivery." />
+  <meta name="keywords" content="BIM services, Revit modeling, clash coordination, BIM management, LOD 350, parametric families" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <meta property="og:site_name" content="Aarya Architects" />
+  <meta property="og:title" content="Aarya Architects — BIM Services" />
+  <meta property="og:description" content="BIM-focused studio providing Revit modeling, coordination, documentation, and visualization services so designers can focus on design." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/SuhasAkhare/Website-Assets/main/Aarya%20Architect%20Logo%20-%20Resized.png" />
+  <meta property="og:url" content="https://aaryaarchitects.com" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Raleway:wght@300;600&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Aarya Architects",
+    "url": "https://aaryaarchitects.com",
+    "logo": "https://raw.githubusercontent.com/SuhasAkhare/Website-Assets/main/Aarya%20Architect%20Logo%20-%20Resized.png",
+    "sameAs": [
+      "https://www.linkedin.com",
+      "https://www.instagram.com"
+    ],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "email": "info@aaryaarchitects.com",
+      "contactType": "customer service"
+    }],
+    "description": "BIM-focused studio providing Revit modeling, coordination, documentation, and visualization services."
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --muted:#777;
+      --text:#0b0b0b;
+      --accent:#000;
+      --section-gap:30px;
+      --header-height:86px;
+      --max-content-width:1100px;
+      --radius:12px;
+      --shadow-soft: 0 8px 24px rgba(11,11,11,0.06);
+      --shadow-light: 0 4px 12px rgba(11,11,11,0.04);
+    }
+
+    /* Basic reset */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      color:var(--text);
+      background:var(--bg);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Skip link for keyboard users */
+    .skip-to-content{
+      position:absolute;
+      left:-9999px;
+      top:auto;
+      height:1px;
+      width:1px;
+      overflow:hidden;
+    }
+    .skip-to-content:focus{
+      left:16px;
+      top:16px;
+      height:auto;
+      width:auto;
+      padding:8px 12px;
+      background:var(--accent);
+      color:#fff;
+      border-radius:8px;
+      z-index:9999;
+    }
+
+    /* Typography helpers */
+    h1,h2,h3,h4{margin:0;color:var(--text)}
+    p{margin:0 0 0px 0;color:var(--muted)}
+    .section-title{
+      font-family:'Raleway',sans-serif;
+      font-weight:300;
+      letter-spacing:4px;
+      text-transform:uppercase;
+      font-size:18px;
+      margin:0 0 26px 0;
+      color:var(--text);
+    }
+
+    /* Header */
+    header.header{
+      --h:var(--header-height);
+      position:fixed;
+      inset:20px 40px auto 40px;
+      border-radius: var(--radius);
+      height:var(--h);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:10px 20px;
+      background:rgba(11, 11, 11, 0.85);
+      color: #fff;
+      backdrop-filter:blur(6px);
+      box-shadow:0 6px 18px rgba(0,0,0,0.06);
+      z-index:1200;
+    }
+    .logo-group{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      text-decoration:none;
+      color:inherit;
+    }
+    .logo-container{
+      width:70px;height:70px;border-radius:50%;overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-light)
+    }
+    .logo-container img{width:60%;height:auto;display:block}
+    .site-title{font-family:'Raleway',sans-serif;font-size:16px;font-weight:600;letter-spacing:1px}
+
+    .header-right {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    /* Navigation */
+    nav.primary-nav{display:flex;gap:8px;align-items:center}
+    nav.primary-nav a{
+      color: #fff;
+      text-decoration:none;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:600;
+      transition:all .18s ease;
+    }
+    nav.primary-nav a:hover, nav.primary-nav a:focus{
+      background: rgba(255, 255, 255, 0.1);
+      outline:none;
+    }
+    .menu-toggle{display:none; background:none;border:0; padding:10px; border-radius:8px; cursor:pointer;}
+    .menu-toggle .bar{display:block;width:22px;height:2px;background:#fff;margin:4px 0;border-radius:2px;transition:transform .25s ease,opacity .2s ease}
+
+    /* Main */
+    main{padding-top:0}
+
+    /* Hero */
+    .hero-section{
+      min-height:100svh;
+      display:flex;align-items:center;justify-content:center;text-align:center;
+      padding: calc(var(--header-height) + 40px) 20px 80px;
+      background:linear-gradient(180deg,#ffffff 0%, #fbfbfd 100%);
+      position: relative; /* Added for positioning */
+    }
+    .hero-inner{max-width:920px}
+    .hero-eyebrow{font-family:'Montserrat',sans-serif;text-transform:uppercase;letter-spacing:3px;font-size:12px;color:var(--muted);margin-bottom:18px}
+    .hero-heading{
+      font-family:'Raleway',sans-serif;
+      font-weight:600;
+      font-size:clamp(28px,6.5vw,44px);
+      line-height:1.02;
+      letter-spacing:2px;
+      margin-bottom:18px;
+      color:var(--accent);
+    }
+    .hero-sub{
+      font-weight:300;font-size:16px;color:#444;margin-bottom:28px;
+      max-width:720px;margin-left:auto;margin-right:auto;
+    }
+    .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;padding: 5px}
+    .cta-primary{background:var(--accent);color:#fff;padding:12px 22px;border-radius:28px;font-weight:600;text-decoration:none;box-shadow:var(--shadow-soft);transition:transform .16s ease,box-shadow .16s ease, background-color .18s ease}
+    .cta-primary:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(0,0,0,0.12)}
+    .cta-primary:disabled{background:#999;cursor:not-allowed;transform:none;box-shadow:none}
+    .cta-ghost{background:transparent;border:1px solid #e6e6e6;color:var(--text);padding:10px 18px;border-radius:20px;text-decoration:none;font-weight:600}
+    
+    header.header .cta-ghost {
+      color: #000000;
+      background: #ffffff;
+      border: 1px solid #ffffff;
+      transition: transform .18s ease, background-color .18s ease;
+    }
+    header.header .cta-ghost:hover,
+    header.header .cta-ghost:focus {
+      background: #ffffff;
+      border-color: #ffffff;
+      transform: scale(1.05);
+    }
+    header.header .cta-ghost:active {
+      background: #f0f0f0;
+      transform: scale(0.98);
+    }
+
+    /* --- Scroll Down Button Styling --- */
+    .scroll-down-btn {
+        position: absolute; 
+        bottom: 40px; 
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px; 
+        height: 40px; 
+        border-radius: 50%;
+        background-color: var(--accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        cursor: pointer;
+        z-index: 10;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.2); 
+        animation: subtlePulse 2.5s infinite ease-in-out; 
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    }
+    .scroll-down-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+    .scroll-down-btn:hover {
+        transform: translateX(-50%) translateY(5px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+        background-color: #333333; 
+        animation: none; 
+    }
+    @keyframes subtlePulse {
+        0% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.4); }
+        70% { box-shadow: 0 0 0 10px rgba(0, 0, 0, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); }
+    }
+
+
+    /* content sections */
+    .content-section{padding:var(--section-gap) 10px}
+    .container{max-width:var(--max-content-width);margin:0 auto;padding:0 30px}
+
+    /* Services grid */
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:22px;
+      align-items:stretch;
+    }
+
+    .service-card {
+      position: relative;
+      overflow: hidden;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: var(--shadow-light);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      min-height: 280px;
+      transition: transform 0.3s cubic-bezier(.2,.9,.25,1), box-shadow 0.3s cubic-bezier(.2,.9,.25,1);
+    }
+
+    .service-card:hover {
+      transform: scale(1.04) translateY(-8px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .service-card-content {
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    
+    .service-card-details {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, #0b0b0b, #111);
+      color: #fff;
+      padding: 20px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card:hover .service-card-content {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    .service-card:hover .service-card-details {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .service-icon{
+      width:72px;height:72px;border-radius:10px;background:#ffffff;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:16px;
+      flex-shrink:0;
+    }
+    .service-card h3{font-family:'Raleway',sans-serif;font-size:18px;margin-bottom:8px;}
+    .service-card-content h3 {color: var(--text);}
+    .service-card-content p {color:var(--muted);font-size:14px;flex:1}
+    
+    .service-card-details h3 {color:#fff}
+    .service-card-details p{color:rgba(255,255,255,0.88);font-size:14px;margin-bottom:12px}
+    .deliverables{list-style:none;padding:0;margin:0 0 12px 0;font-size:13px;color:rgba(255,255,255,0.9)}
+    .deliverables li{margin-bottom:6px}
+    .small-note{font-size:13px;color:rgba(255,255,255,0.7);margin-top:auto}
+    
+    .service-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+
+    /* Card buttons */
+    .card-actions {
+        margin-top: auto;
+        padding: 10px 40px 0px 40px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .card-cta, .card-cta-secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 8px 12px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-weight: 600;
+        text-align: center;
+        flex-grow: 1;
+        font-size: 13px;
+        transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+    }
+    .card-cta {
+        background: #fff;
+        color: #000;
+    }
+    .card-cta:hover {
+      background: #eee;
+    }
+    .card-cta-secondary {
+        background: #fff;
+        color: #000000;
+        border: 1px solid rgba(255,255,255,0.5);
+    }
+    .card-cta-secondary:hover {
+      background: #f0f0f0;
+      border-color: #f0f0f0;
+    }
+    .arrow-icon {
+        width: 1em;
+        height: 1em;
+        stroke-width: 2.5;
+        transition: transform 0.2s ease;
+    }
+    .card-cta-secondary:hover .arrow-icon {
+        transform: translateX(3px);
+    }
+
+    /* -- NEW: Our Working Process Section -- */
+    .process-list {
+      margin-top: 32px;
+    }
+    .process-item {
+      display: flex ; gap: 20px; padding: 10px 0; border-bottom: 1px solid #f0f0f0; flex-direction: row; justify-content: space-between; align-items: center;
+    }
+    .process-item:first-child {
+      border-top: 1px solid #f0f0f0;
+    }
+    .process-left-content {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .process-icon {
+      flex-shrink: 0;
+    }
+    .process-icon img {
+      width: 50px;
+      height: 50px;
+      display: block;
+      border-radius: 0%; /* Make placeholder circular */
+    }
+    .process-content h4 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 18px;
+      margin: 0px 50px 0px 0px;
+      color: var(--text);
+    }
+    .process-content p {
+      margin: 0px 50px 0px 0px;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 80ch;
+      align-items: center
+    }
+    .process-number {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(50px, 5vw, 48px);
+      font-weight: 600;
+      color: #000000;
+      line-height: 1;
+    }
+
+    @media (max-width: 600px) {
+      .process-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+      .process-number {
+        align-self: flex-end;
+        margin-top: -30px; /* Pull number up visually */
+        font-size: 36px;
+      }
+    }
+
+    /* -- The Value We Deliver Section -- */
+    .value-list {
+      margin-top: 32px;
+    }
+    .value-item {
+      display: flex;
+      gap: 24px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f0f0;
+      align-items: center;
+    }
+    .value-item:first-child {
+      border-top: 1px solid #f0f0f0;
+    }
+    .value-icon {
+      flex-shrink: 0;
+    }
+    .value-icon img {
+      width: 50px;
+      height: 50px;
+      display: block;
+      border-radius: 0px;
+    }
+    .value-content h4 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 18px;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+    .value-content p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 80ch;
+    }
+    @media (max-width: 600px) {
+        .value-item {
+            align-items: flex-start;
+        }
+    }
+
+
+    /* Projects grid */
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;justify-content: center;align-content: center;}
+    .project-card{background:#fff;border-radius:18px;padding:18px;border:1px solid #f0f0f0;text-align:center;box-shadow:var(--shadow-light);transition:transform .18s}
+    .project-card h4{font-family:'Raleway',sans-serif;font-size:13px;margin:10px;text-transform:uppercase;letter-spacing:1px}
+
+    /* About */
+    .about-content{display:column;gap:36px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .about-text{flex:1;min-width:260px}
+    .about-images-group{display: flex;padding:10px;gap:50px;align-items: center;flex-wrap: nowrap;flex-direction: row;justify-content: center;}
+    .about-person-card{text-align:center;min-width:160px}
+    .about-image{width:140px;height:140px;border-radius:50%;overflow:hidden;margin:0 auto 10px;box-shadow:var(--shadow-light)}
+    .about-image img{width:100%;height:100%;object-fit:cover}
+
+    /* Gallery Carousel Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 22px;
+    }
+    .gallery-item-title {
+      font-family: 'Raleway', sans-serif;
+      font-size: 18px;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    .carousel-container {
+      position: relative;
+      border-radius: 0px;
+      overflow: hidden;
+    }
+    .carousel-slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .carousel-slide {
+      min-width: 100%;
+      position: relative; /* for caption positioning */
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(150, 150, 150, 20%);
+        color: black;
+        border: 1px solid rgba(150, 150, 150, 20%);
+        padding: 0;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 24px;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+        transition: background-color 0.2s ease, backdrop-filter 0.2s ease;
+        z-index: 10;
+        backdrop-filter: blur(4px);
+    }
+    .carousel-btn:hover, .carousel-btn:focus-visible {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+    .carousel-btn.prev {
+        left: 16px;
+    }
+    .carousel-btn.next {
+        right: 16px;
+    }
+    .carousel-btn svg {
+      width: 24px;
+      height: 24px;
+      stroke-width: 2.5;
+    }
+    
+    .gallery-caption{position:absolute;left:0;right:0;bottom:0;padding:18px;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.6));color:#fff}
+
+    /* Contact form */
+    .contact-form{background:#fff;padding:30px 50px;border-radius:12px;box-shadow:var(--shadow-soft);max-width:760px;margin:0 auto}
+    .form-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .form-group{margin-bottom:14px}
+    label{display:block;font-weight:600;margin-bottom:8px}
+    input[type="text"],input[type="email"],select,textarea{
+      width:100%;padding:12px;border:1px solid #e6e6e6;border-radius:8px;font-size:15px;font-family:inherit;
+    }
+    input:focus,select:focus,textarea:focus{outline:2px solid rgba(0,0,0,0.06);border-color:#bfbfbf}
+    .note{font-size:13px;color:var(--muted);margin-top:20px;text-align:center}
+
+    /* Footer */
+    footer.footer {
+      background: #0b0b0b;
+      color: #cfcfcf;
+      padding: 20px 18px 20px;
+      position: relative;
+    }
+    footer .footer-content {
+      max-width: var(--max-content-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding-bottom: 0px;
+    }
+    footer .footer-left {
+      display: flex;
+      gap: 60px;
+      flex-wrap: wrap;
+      flex-grow: 1;
+    }
+    .footer-branding {
+      min-width: 250px;
+    }
+    .footer-branding .logo-group {
+      margin-bottom: 0px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    .footer-logo-container {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .footer-logo-container img {
+      width: 60%;
+      height: auto;
+    }
+    .footer-site-title {
+      font-family: 'Raleway', sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+    }
+    .footer-tagline {
+      font-size: 12px;
+      color: #a9a9a9;
+      margin-top: 2px;
+    }
+    footer .footer-nav-links {
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+    footer .footer-nav-col {
+      display: flex;
+      flex-direction: column;
+    }
+    footer h4 {
+      font-family: 'Raleway', sans-serif;
+      color: #fff;
+      font-size: 12px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    footer .footer-nav-col a {
+      color: #cfcfcf;
+      text-decoration: none;
+      margin-bottom: 5px;
+      transition: color .2s ease;
+      font-size: 12px;
+    }
+    footer .footer-nav-col a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+    footer .footer-right p {
+      margin-bottom: 8px;
+      font-size: 12px;
+    }
+    footer a {
+      color: #cfcfcf;
+      text-decoration: none;
+      font-size: 12px;
+    }
+    footer a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+    .footer-bottom {
+      max-width: var(--max-content-width);
+      margin: 0 auto;
+      text-align: center;
+      padding-top: 15px;
+      margin-top: 10px;
+      border-top: 1px solid #333;
+      font-size: 12px;
+      color: #9f9f9f;
+    }
+
+    /* Scroll Up Button */
+    .scroll-up-btn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    }
+    .scroll-up-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+    .scroll-up-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 7px 16px rgba(0,0,0,0.2);
+      background-color: #f8f8f8;
+    }
+
+
+    /* Modal */
+    .message-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;align-items:center;justify-content:center;z-index:1500; opacity:0; transition: opacity .25s ease;}
+    .message-modal.visible{display:flex; opacity:1;}
+    .modal-card{background:#fff;border-radius:12px;padding:28px;max-width:420px;width:90%;box-shadow:var(--shadow-soft);text-align:center; transform: scale(0.95); transition: transform .25s ease;}
+    .message-modal.visible .modal-card{transform: scale(1);}
+
+    /* focus-visible for keyboard users */
+    :focus{outline:none}
+    :focus-visible{outline:3px solid #222;outline-offset:3px;border-radius:6px}
+
+    /* small screens */
+    @media (max-width:880px){
+      .hero-sub{font-size:15px}
+      .about-content{flex-direction:column-reverse;align-items:center;text-align:center}
+      .hero-section{padding:36px 18px 80px}
+      .carousel-slide img{height:220px}
+    }
+
+    /* accessibility: reduced-motion */
+    @media (prefers-reduced-motion: reduce){
+      *{animation:none !important;transition:none!important}
+      .reveal { transition: none; }
+    }
+    
+    /* Improved Mobile Navigation */
+    @media (max-width: 880px) {
+      nav.primary-nav {
+        display: none; /* Hide by default */
+        position: fixed;
+        inset: 100px 0 0 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        background: rgba(0, 0, 0, 0.98); /* Changed to black background for mobile menu */
+        backdrop-filter: blur(10px);
+        padding: 40px;
+        height: calc(100vh - var(--header-height));
+      }
+
+      nav.primary-nav a {
+        color: #fff;
+        transition: all .18s ease;
+      }
+      nav.primary-nav a:hover, nav.primary-nav a:focus {
+        background: rgba(255, 255, 255, 0.15);
+        outline: none;
+      }
+      
+      nav.primary-nav a.cta-ghost {
+          color: #000;
+          background: #fff;
+          border-color: #fff;
+          transition: transform .18s ease, background-color .18s ease;
+      }
+      nav.primary-nav a.cta-ghost:hover,
+      nav.primary-nav a.cta-ghost:focus {
+          background: #fff;
+          border-color: #fff;
+          transform: scale(1.05);
+          color: #000; /* Keep color explicit */
+      }
+      nav.primary-nav a.cta-ghost:active {
+          background: #f0f0f0;
+          border-color: #f0f0f0;
+          transform: scale(0.98);
+          color: #000; /* Keep color explicit */
+      }
+      
+      .menu-toggle { display: block; }
+      
+      body.nav-open nav.primary-nav {
+        display: flex;
+        border-radius: var(--radius);
+      }
+
+      body.nav-open .menu-toggle .bar:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+      }
+      body.nav-open .menu-toggle .bar:nth-child(2) {
+        opacity: 0;
+      }
+      body.nav-open .menu-toggle .bar:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+      }
+      
+      body.nav-open {
+        overflow: hidden;
+      }
+    }
+
+    /* Reveal-on-scroll animation classes */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s cubic-bezier(0.33, 1, 0.68, 1), transform 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-to-content" href="#main">Skip to content</a>
+
+  <header class="header" role="banner">
+      <a href="#main" class="logo-group" aria-label="Aarya Architects home">
+        <div class="logo-container" aria-hidden="true">
+          <img src="https://raw.githubusercontent.com/SuhasAkhare/Website-Assets/main/Aarya%20Architect%20Logo%20-%20Resized.png" alt="Aarya Architects logo">
+        </div>
+        <div>
+          <div class="site-title">Aarya Architects</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.7);margin-top:2px"> BIM Services </div>
+        </div>
+      </a>
+
+      <div class="header-right">
+        <nav class="primary-nav" role="navigation" aria-label="Primary navigation">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact" class="cta-ghost">Connect</a>
+        </nav>
+
+        <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+  </header>
+
+  <main id="main" role="main">
+    <section class="hero-section" aria-label="Introduction">
+      <div class="hero-inner container">
+        <div class="hero-eyebrow">Building Information Modeling</div>
+        <h1 class="hero-heading">You focus on design. We handle the Delivery.</h1>
+        <p class="hero-sub">We provide precision Revit Modeling, detailed Clash Resolution, custom Parametric Families, and construction-ready Documentation to guarantee your team an absolutely friction-free workflow.</p>
+        <div class="hero-actions">
+          <a class="cta-primary" href="#contact">Discuss Your Project</a>
+        </div>
+      </div>
+      <a href="#services" class="scroll-down-btn" aria-label="Scroll to services section">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 5v14m0 0l-4-4m4 4l4-4" />
+          </svg>
+      </a>
+    </section>
+
+    <section id="services" class="content-section">
+      <div class="container">
+        <h2 class="section-title">The BIM Services You Need</h2>
+        <p style="color:var(--muted);margin-bottom:18px;max-width:860px">BIM support. We integrate seamlessly as your dedicated remote BIM team, ensuring your models are perfectly managed, coordinated, and construction-ready.</p>
+
+        <div class="services-grid" role="list">
+
+          <div class="service-card reveal" role="listitem" aria-labelledby="s1Label">
+            <div class="service-card-content">
+              <div class="service-icon" aria-hidden="true"><img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/3D%20Modelling.png?raw=true" alt="Building Information Modeling icon"></div>
+              <h3 id="s1Label">Building Information Modeling</h3>
+              <p>We provide detailed BIM models upto LOD 500 across Architecture, Structure, MEP, and Firefighting disciplines with parametric families for seamless, build-ready integration.</p>
+            </div>
+            <div class="service-card-details">
+              <h3>Building Information Modeling — Deliverables</h3>
+              <ul class="deliverables">
+                <li>• BIM Model (LOD 100–500)</li>
+                <li>• Fabrication-Ready Model / As-Built Model</li>
+                <li>• Scan to BIM</li>
+              </ul>
+              <div class="small-note">Tools : Autodesk Revit • Autodesk Construction Cloud </div>
+              <div class="card-actions">
+                  <a href="bim-details.html" target="_blank" rel="noopener noreferrer" class="card-cta-secondary">
+                    Learn More
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="service-card reveal" role="listitem" aria-labelledby="s2Label">
+            <div class="service-card-content">
+              <div class="service-icon" aria-hidden="true"><img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Clash%20Coordination.png?raw=true" alt="Clash Coordination icon"></div>
+              <h3 id="s2Label">Clash Coordination</h3>
+              <p>We provide detailed Clash Reports and full Clash Resolutions with centralized issue tracking across all MEPF, Architecture, and Structure disciplines.</p>
+            </div>
+            <div class="service-card-details">
+              <h3>Clash Coordination — Deliverables</h3>
+              <ul class="deliverables">
+                <li>• NWF/NWD models</li>
+                <li>• Detailed Clash Reports</li>
+                <li>• Resolved Multi-Discipline Model</li>
+              </ul>
+              <div class="small-note">Tools :Autodesk Revvit • Naviswork Manage • ACC Model Coordination</div>
+              <div class="card-actions">
+                  <a href="bim-details.html" target="_blank" rel="noopener noreferrer" class="card-cta-secondary">
+                    Learn More
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="service-card reveal" role="listitem" aria-labelledby="s3Label">
+            <div class="service-card-content">
+              <div class="service-icon" aria-hidden="true"><img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Template.png?raw=true" alt="Templates and Families icon"></div>
+              <h3 id="s3Label">Template & Families</h3>
+              <p>We provide standardized Revit templates and intelligent parametric families that automate your workflow and speed future projects and maintain quality across teams.</p>
+            </div>
+            <div class="service-card-details">
+              <h3>Templates & Families — Deliverables</h3>
+              <ul class="deliverables">
+                <li>• Revit families (.rfa)</li>
+                <li>• Project template (.rte)</li>
+              </ul>
+              <div class="small-note">Tools : Autodesk Revit</div>
+              <div class="card-actions">
+                  <a href="bim-details.html" target="_blank" rel="noopener noreferrer" class="card-cta-secondary">
+                    Learn More
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="service-card reveal" role="listitem" aria-labelledby="s4Label">
+            <div class="service-card-content">
+                <div class="service-icon" aria-hidden="true"><img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Documentation.png?raw=true" alt="Documentation and Detailing icon"></div>
+                <h3 id="s4Label">Documentation & Detailing</h3>
+                <p>We provide contractor-ready drawing sets and schedules extracted from the model, following client or international standards as required.</p>
+            </div>
+            <div class="service-card-details">
+                <h3>Documentation & Detailing — Deliverables</h3>
+                <ul class="deliverables">
+                    <li>• SD, DD, CD sets (PDF/DWG)</li>
+                    <li>• Schedules and BOM/BOQ exports</li>
+                </ul>
+                <div class="small-note">Tools : Autodesk Revit • AutoCAD • Bluebeam • Autodesk Construction Cloud</div>
+                <div class="card-actions">
+                  <a href="bim-details.html" target="_blank" rel="noopener noreferrer" class="card-cta-secondary">
+                    Learn More
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </a>
+                </div>
+            </div>
+          </div>
+
+          <div class="service-card reveal" role="listitem" aria-labelledby="s5Label">
+            <div class="service-card-content">
+                <div class="service-icon" aria-hidden="true"><img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Vizualization.png?raw=true" alt="3D Visualization icon"></div>
+                <h3 id="s5Label">Visualization</h3>
+                <p>We provide realtime renders and walkthroughs to communicate design decisions clearly to stakeholders and clients.</p>
+            </div>
+            <div class="service-card-details">
+                <h3>Visualization — Deliverables</h3>
+                <ul class="deliverables">
+                    <li>• Still rendered (JPG/PNG) views</li>
+                    <li>• Short walkthrough video</li>
+                </ul>
+                <div class="small-note">Autodesk Revit • SketchUp • Vray • Twinmotion</div>
+                <div class="card-actions">
+                  <a href="bim-details.html" target="_blank" rel="noopener noreferrer" class="card-cta-secondary">
+                    Learn More
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </a>
+                </div>
+            </div>
+          </div>
+
+          <div class="service-card reveal" role="listitem" aria-labelledby="s6Label">
+            <div class="service-card-content">
+              <div class="service-icon" aria-hidden="true"><img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Design.png?raw=true" alt="Architectural Design icon"></div>
+              <h3 id="s6Label">Architectural Design</h3>
+              <p>We blend architectural design expertise with BIM execution from concept to completion. Our process is integrated with modeling and coordination, ensuring every design decision is coordinated, and BIM-compliant.</p>
+            </div>
+            <div class="service-card-details">
+              <h3>Architectural Design — Deliverables</h3>
+              <ul class="deliverables">
+                <li>• Conceptual design</li>
+                <li>• SD, DD, CD packages</li>
+                <li>• BIM-Integrated Model</li>
+              </ul>
+              <div class="small-note">Autodesk Construction Cloud • Autodesk Revit • AutoCAD</div>
+              <div class="card-actions">
+                  <a href="bim-details.html" target="_blank" rel="noopener noreferrer" class="card-cta-secondary">
+                    Learn More
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:50px;text-align:center">
+          <a class="cta-primary" href="#contact">Discuss Our Services</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="content-section" aria-labelledby="processTitle">
+      <div class="container">
+        <h2 id="processTitle" class="section-title">Our Working Process</h2>
+        <div class="process-list">
+          <div class="process-item reveal">
+            <div class="process-left-content">
+              <div class="process-icon">
+                <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/01%20Audit.png?raw=true" alt="Project Audit Icon">
+              </div>
+              <div class="process-content">
+                <h4>Project Audit</h4>
+                <p>We review your drawings and project scope to provide a clear budget, timeline, and execution plan.	</p>
+              </div>
+            </div>
+            <div class="process-number">01</div>
+          </div>
+          <div class="process-item reveal">
+            <div class="process-left-content">
+              <div class="process-icon">
+                <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/02%20Approval.png?raw=true" alt="Approval Icon">
+              </div>
+              <div class="process-content">
+                <h4>Approval</h4>
+                <p>After approval, Our dedicated team starts immediately.</p>
+              </div>
+            </div>
+            <div class="process-number">02</div>
+          </div>
+          <div class="process-item reveal">
+            <div class="process-left-content">
+              <div class="process-icon">
+                <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/03%20CDE.png?raw=true" alt="Delivery Icon">
+              </div>
+              <div class="process-content">
+                <h4>Common Data Enviroment Set Up</h4>
+                <p> We set up a (CDE)Common Data Environment (Google Workspace/ACC) for seamless workflow, file transparency, and collaboration. </p>
+              </div>
+            </div>
+            <div class="process-number">03</div>
+          </div>
+          <div class="process-item reveal">
+            <div class="process-left-content">
+              <div class="process-icon">
+                <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/04%20Production.png?raw=true" alt="Modeling & Coordination Icon">
+              </div>
+              <div class="process-content">
+                <h4>Production & QA/QC</h4>
+                <p>We conduct the modeling, coordination, and documentation process with final QA/QC.</p>
+              </div>
+            </div>
+            <div class="process-number">04</div>
+          </div>
+          <div class="process-item reveal">
+            <div class="process-left-content">
+              <div class="process-icon">
+                <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/05%20Handover.png?raw=true" alt="Delivery Icon">
+              </div>
+              <div class="process-content">
+                <h4>Handover & Support</h4>
+                <p> handover packages and provide support until project completion.</p>
+              </div>
+            </div>
+            <div class="process-number">05</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="value" class="content-section" aria-labelledby="valueTitle">
+      <div class="container">
+        <h2 id="valueTitle" class="section-title">The Value We Deliver</h2>
+        <div class="value-list">
+          
+          <div class="value-item reveal">
+            <div class="value-icon">
+              <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/01%20Team%20Extension.png?raw=true" alt="Team Extension Icon">
+            </div>
+            <div class="value-content">
+              <h4>Team Extension</h4>
+              <p>We seamlessly integrate, adopting your tools and standards for reliable, headache-free support.</p>
+            </div>
+          </div>
+          
+          <div class="value-item reveal">
+            <div class="value-icon">
+              <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/02%20Transparency.png?raw=true" alt="Transparency Icon">
+            </div>
+            <div class="value-content">
+              <h4>Transparency</h4>
+              <p>Our centralized project files offer instant visibility, eliminating confusion and coordination risks.</p>
+            </div>
+          </div>
+          
+          <div class="value-item reveal">
+            <div class="value-icon">
+              <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/03%20Collaboration.png?raw=true" alt="Collaboration Icon">
+            </div>
+            <div class="value-content">
+              <h4>Proactive Collaboration</h4>
+              <p>Open communication and continuous improvement through digital tools and new methods keep projects competitive.</p>
+            </div>
+          </div>
+          
+          <div class="value-item reveal">
+            <div class="value-icon">
+              <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/04%20Automation.png?raw=true" alt="Automation Icon">
+            </div>
+            <div class="value-content">
+              <h4>Automated Workflows</h4>
+              <p>Automated tasks and quality checks boost efficiency, ensuring accurate, construction-ready design data.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="content-section" aria-labelledby="projectsTitle">
+      <div class="container">
+        <h2 id="projectsTitle" class="section-title">We Work On</h2>
+        <p style="color:var(--muted);margin-bottom:18px;max-width:860px">We collaborate across typologies — from residential projects to institutional campuses — bringing BIM discipline and delivery focus to each context.</p>
+
+        <div class="projects-grid">
+          <div class="project-card reveal" role="article">
+            <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Icon%20Residential.png?raw=true" alt="Residential projects icon" style="max-width:30px;display:block;margin:0 auto" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/72x72/f0f0f0/999?text=Icon'">
+            <h4>Residential</h4>
+            <p style="color:var(--muted);font-size:13px">• Single-Family.</p>
+            <p style="color:var(--muted);font-size:13px">• Multi-Family.</p>
+            <p style="color:var(--muted);font-size:13px">• Container Home.</p>
+          </div>
+          <div class="project-card reveal" role="article">
+            <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Icon%20Commercial.png?raw=true" alt="Commercial projects icon" style="max-width:30px;display:block;margin:0 auto" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/72x72/f0f0f0/999?text=Icon'">
+            <h4>Commercial</h4>
+            <p style="color:var(--muted);font-size:13px">• Office.</p>
+            <p style="color:var(--muted);font-size:13px">• Retail.</p>
+            <p style="color:var(--muted);font-size:13px">• Restaurant.</p>
+          </div>
+          <div class="project-card reveal" role="article">
+            <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Icon%20Industrial%201.png?raw=true" alt="Industrial projects icon" style="max-width:30px;display:block;margin:0 auto" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/72x72/f0f0f0/999?text=Icon'">
+            <h4>Industrial</h4>
+            <p style="color:var(--muted);font-size:13px">• Airplane Hanger.</p>
+            <p style="color:var(--muted);font-size:13px">• Auto Service Center.</p>
+          </div>
+          <div class="project-card reveal" role="article">
+            <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Icon%20Institutional.png?raw=true" alt="Institutional projects icon" style="max-width:30px;display:block;margin:0 auto" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/72x72/f0f0f0/999?text=Icon'">
+            <h4>Institutional</h4>
+            <p style="color:var(--muted);font-size:13px">• School.</p>
+            <p style="color:var(--muted);font-size:13px">• Hospital.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="content-section">
+      <div class="container">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>Aarya Architects is a BIM-focused studio founded and run by two BIM Managers. Together we bring over a decade of combined experience delivering Revit modeling, coordination and documentation for design and construction teams.</p>
+            <p>We act as your in-house BIM team without the overhead — hands-on, standards-driven, and fast. Whether you need a short-term model setup, template & family creation or full project coordination, we deliver precise, trusted results.</p>
+            <p style="font-weight:600;margin-top:8px">Precision. Clarity. Collaboration.</p>
+          </div>
+          <div class="about-images-group" aria-hidden="false">
+            <div class="about-person-card reveal" role="article">
+              <div class="about-image"><img src="https://raw.githubusercontent.com/SuhasAkhare/Website-Assets/main/01%20Suhas.png" alt="Suhas Akhare - BIM Architect" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/140x140/f0f0f0/999?text=Photo'"></div>
+              <h4>Suhas Akhare</h4>
+              <p style="color:var(--muted);font-size:13px">BIM Architect & Co-founder</p>
+              <p style="font-size:13px;color:#4c4c4c">"Be yourself"</p>
+            </div>
+            <div class="about-person-card reveal" role="article">
+              <div class="about-image"><img src="https://raw.githubusercontent.com/SuhasAkhare/Website-Assets/main/02%20Akansha.png" alt="Akansha Maurya - Architect" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/140x140/f0f0f0/999?text=Photo'"></div>
+              <h4>Akansha Maurya</h4>
+              <p style="color:var(--muted);font-size:13px">Architect / Urban Designer & Co-founder</p>
+              <p style="font-size:13px;color:#4c4c4c">"All it takes is courage"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="content-section">
+      <div class="container">
+        <h2 class="section-title">Gallery</h2>
+        <div class="gallery-grid">
+
+          <!-- Carousel 1: Multi-Family Residence -->
+          <div class="reveal">
+            <h3 class="gallery-item-title">Multi-Family Residence</h3>
+            <div class="carousel-container" role="region" aria-label="Residential projects gallery">
+              <div class="carousel-slides">
+                <div class="carousel-slide" role="group" aria-label="slide 1 of 4">
+                  <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/01NVP.jpg?raw=true" alt="Modern residential exterior" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/400x280/f0f0f0/999?text=Image'">
+                </div>
+                <div class="carousel-slide" role="group" aria-label="slide 2 of 4">
+                  <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/02NVP.jpg?raw=true" alt="Spacious modern living room" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/400x280/f0f0f0/999?text=Image'">
+                </div>
+                <div class="carousel-slide" role="group" aria-label="slide 3 of 4">
+                  <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/05NVP.jpg?raw=true" alt="Modern kitchen interior" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/400x280/f0f0f0/999?text=Image'">
+                </div>
+                <div class="carousel-slide" role="group" aria-label="slide 4 of 4">
+                  <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/04NVP.jpg?raw=true" alt="House exterior with swimming pool" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/400x280/f0f0f0/999?text=Image'">
+                </div>
+              </div>
+              <button class="carousel-btn prev" aria-label="Previous slide"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+              <button class="carousel-btn next" aria-label="Next slide"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+            </div>
+          </div>
+
+          <!-- Carousel 2: Airport Hanger -->
+          <div class="reveal">
+            <h3 class="gallery-item-title">Airport Hanger</h3>
+            <div class="carousel-container" role="region" aria-label="Corporate projects gallery">
+              <div class="carousel-slides">
+                <div class="carousel-slide" role="group" aria-label="slide 1 of 4">
+                  <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/01%20Hanger.jpg?raw=true" alt="Office interior" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/400x280/f0f0f0/999?text=Image'">
+                </div>
+                <div class="carousel-slide" role="group" aria-label="slide 2 of 4">
+                  <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/02%20Hanger.jpg?raw=true" alt="Modern collaborative office space" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/400x280/f0f0f0/999?text=Image'">
+                </div>
+                <div class="carousel-slide" role="group" aria-label="slide 3 of 4">
+                  <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/03%20Hanger.jpg?raw=true" alt="Modern office building exterior" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/400x280/f0f0f0/999?text=Image'">
+                </div>
+                <div class="carousel-slide" role="group" aria-label="slide 4 of 4">
+                  <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/04%20Hanger.jpg?raw=true" alt="Bright and airy meeting room" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/400x280/f0f0f0/999?text=Image'">
+                </div>
+              </div>
+              <button class="carousel-btn prev" aria-label="Previous slide"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+              <button class="carousel-btn next" aria-label="Next slide"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+            </div>
+          </div>
+
+          <!-- Carousel 3: Container Homes -->
+          <div class="reveal">
+            <h3 class="gallery-item-title">Container Homes</h3>
+            <div class="carousel-container" role="region" aria-label="Container Homes">
+              <div class="carousel-slides">
+                <div class="carousel-slide" role="group" aria-label="slide 1 of 4">
+                  <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/013SQ.jpg?raw=true" alt="Luxury villa pool" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/400x280/f0f0f0/999?text=Image'">
+                </div>
+                <div class="carousel-slide" role="group" aria-label="slide 2 of 4">
+                  <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/023SQ.jpg?raw=true" alt="Modern villa exterior at dusk" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/400x280/f0f0f0/999?text=Image'">
+                </div>
+                <div class="carousel-slide" role="group" aria-label="slide 3 of 4">
+                  <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/033SQ.jpg?raw=true" alt="Minimalist villa interior" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/400x280/f0f0f0/999?text=Image'">
+                </div>
+                <div class="carousel-slide" role="group" aria-label="slide 4 of 4">
+                  <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/043SQ.jpg?raw=true" alt="Bedroom with a large window view" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/400x280/f0f0f0/999?text=Image'">
+                </div>
+              </div>
+              <button class="carousel-btn prev" aria-label="Previous slide"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+              <button class="carousel-btn next" aria-label="Next slide"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="content-section" aria-labelledby="contactTitle">
+      <div class="container">
+        <h2 id="contactTitle" class="section-title">Connect</h2>
+        <p style="color:var(--muted);max-width:760px;margin-bottom:18px">Tell us about your project—scope, standards, and timeline. We typically reply within 24 hours with a tailored project approach.</p>
+
+        <form class="contact-form" action="https://formsubmit.co/suhas@aaryaarchitects.com" method="POST" aria-label="Contact form">
+          <input type="hidden" name="_subject" value="BIM Service Request">
+          <input type="text" name="_hp_name" style="display:none" tabindex="-1" autocomplete="off">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your name</label>
+              <input id="name" name="Client Name" type="text" placeholder="John Smith" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input id="email" name="Email" type="email" placeholder="you@firm.com" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="company">Company / Firm</label>
+              <input id="company" name="Company/Firm" type="text" placeholder="AEC Solutions Inc.">
+            </div>
+            <div class="form-group">
+              <label for="service">Service required</label>
+              <select id="service" name="Service Required" required>
+                <option value="" disabled selected>Select the BIM service</option>
+                <option>Building Information Modeling</option>
+                <option>Documentation & Detailing</option>
+                <option>Clash Coordination</option>
+                <option>Template & Parametric Family Creation</option>
+                <option>3D Visualization</option>
+                <option>Full BIM Management / Consulting</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Project details / message</label>
+            <textarea id="message" name="Project Details" rows="5" placeholder="Briefly describe scope (e.g., LOD 350 for MEP, timeline, standards)." required></textarea>
+          </div>
+
+          <div style="text-align:center;margin-top:12px">
+            <button type="submit" class="cta-primary">Request BIM Proposal</button>
+            <div class="note">Your data is confidential and used only for project communication.</div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div id="messageModal" class="message-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card" role="document">
+      <h3 id="modalTitle">Message</h3>
+      <p id="modalDescription">Thanks — we received your enquiry.</p>
+      <div style="margin-top:18px"><button class="cta-ghost">Close</button></div>
+    </div>
+  </div>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-content">
+      <div class="footer-left">
+        <div class="footer-branding">
+          <a href="#main" class="logo-group">
+            <div class="footer-logo-container">
+              <img src="https://raw.githubusercontent.com/SuhasAkhare/Website-Assets/main/Aarya%20Architect%20Logo%20-%20Resized.png" alt="Aarya Architects logo">
+            </div>
+            <div>
+              <span class="footer-site-title">Aarya Architects</span>
+              <div class="footer-tagline">BIM Service Provider</div>
+            </div>
+          </a>
+        </div>
+        <div class="footer-nav-links">
+          <div class="footer-nav-col">
+            <h4>Navigate</h4>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#gallery">Gallery</a>
+          </div>
+          <div class="footer-nav-col">
+            <h4>Our Services</h4>
+            <a href="#s1Label">Building Information Modeling</a>
+            <a href="#s2Label">Clash Coordination</a>
+            <a href="#s3Label">Template &amp; Families</a>
+            <a href="#s4Label">Documentation</a>
+            <a href="#s5Label">Visualization</a>
+            <a href="#s6Label">Architectural Design</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-right">
+        <h4>Connect</h4>
+        <p>Email: <a href="mailto:info@aaryaarchitects.com">info@aaryaarchitects.com</a></p>
+        <p>Based in India</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="copyright-year">2025</span> Aarya Architects. All rights reserved.</p>
+    </div>
+    <a href="#main" class="scroll-up-btn" aria-label="Scroll to top">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 19V5m0 0l-4 4m4-4l4 4"/>
+        </svg>
+    </a>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      /**
+       * ------------------------------------------------------------------------
+       * 1. Mobile Navigation Toggle
+       * ------------------------------------------------------------------------
+       */
+      const menuToggle = document.querySelector('.menu-toggle');
+      const primaryNav = document.querySelector('.primary-nav');
+
+      if (menuToggle && primaryNav) {
+        menuToggle.addEventListener('click', () => {
+          const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+          menuToggle.setAttribute('aria-expanded', !isExpanded);
+          document.body.classList.toggle('nav-open');
+        });
+      }
+
+      /**
+       * ------------------------------------------------------------------------
+       * 2. Smooth Scrolling for Anchor Links
+       * ------------------------------------------------------------------------
+       */
+      document.body.addEventListener('click', (event) => {
+        const link = event.target.closest('a[href^="#"]');
+        if (!link) return;
+
+        const href = link.getAttribute('href');
+        if (href.length <= 1) return;
+
+        const targetElement = document.querySelector(href);
+        if (targetElement) {
+          event.preventDefault();
+          
+          if (document.body.classList.contains('nav-open')) {
+              document.body.classList.remove('nav-open');
+              menuToggle.setAttribute('aria-expanded', 'false');
+          }
+
+          const headerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height'), 10) || 86;
+          const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight - 10;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+
+      /**
+       * ------------------------------------------------------------------------
+       * 3. Reveal Elements on Scroll using Intersection Observer
+       * ------------------------------------------------------------------------
+       */
+      const revealElements = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          rootMargin: '0px 0px -10% 0px',
+          threshold: 0.1
+        });
+        revealElements.forEach(el => observer.observe(el));
+      } else {
+          revealElements.forEach(el => el.classList.add('is-visible'));
+      }
+
+      
+      /**
+       * ------------------------------------------------------------------------
+       * 4. Contact Form Submission & Modal Handling (AJAX)
+       * ------------------------------------------------------------------------
+       */
+      const contactForm = document.querySelector('.contact-form');
+      const modal = document.getElementById('messageModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalDesc = document.getElementById('modalDescription');
+      const modalCloseBtn = modal ? modal.querySelector('.cta-ghost') : null;
+      let lastFocusedElementBeforeModal;
+
+      const openModal = (title, text) => {
+          if (!modal) return;
+          lastFocusedElementBeforeModal = document.activeElement;
+          modalTitle.textContent = title;
+          modalDesc.textContent = text;
+          modal.classList.add('visible');
+          modal.setAttribute('aria-hidden', 'false');
+          modalCloseBtn.focus();
+      };
+
+      const closeModal = () => {
+          if (!modal) return;
+          modal.classList.remove('visible');
+          modal.setAttribute('aria-hidden', 'true');
+          if (lastFocusedElementBeforeModal) {
+              lastFocusedElementBeforeModal.focus();
+          }
+      };
+
+      if (modal) {
+          modalCloseBtn.addEventListener('click', closeModal);
+          modal.addEventListener('keydown', (e) => {
+              if (e.key === 'Escape') closeModal();
+          });
+      }
+
+      if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const honeypot = contactForm.querySelector('input[name="_hp_name"]');
+          if (honeypot && honeypot.value) {
+            return;
+          }
+
+          const formData = new FormData(contactForm);
+          const action = contactForm.getAttribute('action');
+          const submitButton = contactForm.querySelector('button[type="submit"]');
+
+          submitButton.disabled = true;
+          submitButton.textContent = 'Sending...';
+
+          fetch(action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          }).then(response => {
+            if (response.ok) {
+              openModal('Message Sent!', 'Thanks for reaching out. We will get back to you shortly.');
+              contactForm.reset();
+            } else {
+              return response.json().then(data => {
+                const errorMessage = data.errors ? data.errors.map(err => err.message).join(', ') : 'An unknown error occurred.';
+                throw new Error(errorMessage);
+              });
+            }
+          }).catch(error => {
+            console.error('Form submission error:', error);
+            openModal('Submission Error', `Sorry, there was a problem. ${error.message}. Please email us directly.`);
+          }).finally(() => {
+            submitButton.disabled = false;
+            submitButton.textContent = 'Request BIM Proposal';
+          });
+        });
+      }
+
+      /**
+       * ------------------------------------------------------------------------
+       * 5. Gallery Carousel
+       * ------------------------------------------------------------------------
+       */
+      const carousels = document.querySelectorAll('.carousel-container');
+      carousels.forEach(carousel => {
+        const slides = carousel.querySelector('.carousel-slides');
+        const prevBtn = carousel.querySelector('.prev');
+        const nextBtn = carousel.querySelector('.next');
+        const allSlides = carousel.querySelectorAll('.carousel-slide');
+        const slideCount = allSlides.length;
+        let currentIndex = 0;
+
+        function updateAria() {
+            allSlides.forEach((slide, i) => {
+                slide.setAttribute('aria-hidden', i !== currentIndex);
+            });
+        }
+
+        function showSlide(index) {
+          if (index >= slideCount) {
+            currentIndex = 0;
+          } else if (index < 0) {
+            currentIndex = slideCount - 1;
+          } else {
+            currentIndex = index;
+          }
+          const offset = -currentIndex * 100;
+          slides.style.transform = `translateX(${offset}%)`;
+          updateAria();
+        }
+
+        nextBtn.addEventListener('click', () => {
+          showSlide(currentIndex + 1);
+        });
+
+        prevBtn.addEventListener('click', () => {
+          showSlide(currentIndex - 1);
+        });
+
+        // Initialize
+        showSlide(0);
+      });
+
+      /**
+       * ------------------------------------------------------------------------
+       * 6. Auto-update Copyright Year
+       * ------------------------------------------------------------------------
+       */
+       const yearSpan = document.getElementById('copyright-year');
+       if(yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+       }
+    });
+  </script>
+</body>
+</html>
+
