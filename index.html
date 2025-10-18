@@ -700,13 +700,6 @@
       background-color: #f8f8f8;
     }
 
-
-    /* Modal */
-    .message-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;align-items:center;justify-content:center;z-index:1500; opacity:0; transition: opacity .25s ease;}
-    .message-modal.visible{display:flex; opacity:1;}
-    .modal-card{background:#fff;border-radius:12px;padding:28px;max-width:420px;width:90%;box-shadow:var(--shadow-soft);text-align:center; transform: scale(0.95); transition: transform .25s ease;}
-    .message-modal.visible .modal-card{transform: scale(1);}
-
     /* focus-visible for keyboard users */
     :focus{outline:none}
     :focus-visible{outline:3px solid #222;outline-offset:3px;border-radius:6px}
@@ -1262,9 +1255,9 @@
         <p style="color:var(--muted);max-width:760px;margin-bottom:18px">Tell us about your project—scope, standards, and timeline. We typically reply within 24 hours with a tailored project approach.</p>
 
         <form class="contact-form" action="https://formsubmit.co/a85eab003ddc941a1ff01bddcd2e16d9" method="POST" aria-label="Contact form">
-          <input type="hidden" name="_subject" value="BIM Service Request">
-          <input type="text" name="_honey" style="position:absolute; left:-9999px; opacity:0; height:0; width:0;" tabindex="-1" autocomplete="off">
-                    <input type="hidden" name="_next" value="https://aaryaarchitects.com/thank-you.html">
+          <input type="hidden" name="_subject" value="BIM Service Request">
+          <input type="text" name="_honey" style="position:absolute; left:-9999px; opacity:0; height:0; width:0;" tabindex="-1" autocomplete="off">
+          <value="https://aaryaarchitects.com/thank-you.html">
 
           <div class="form-row">
             <div class="form-group">
@@ -1309,14 +1302,6 @@
       </div>
     </section>
   </main>
-
-  <div id="messageModal" class="message-modal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal-card" role="document">
-      <h3 id="modalTitle">Message</h3>
-      <p id="modalDescription">Thanks — we received your enquiry.</p>
-      <div style="margin-top:18px"><button class="cta-ghost">Close</button></div>
-    </div>
-  </div>
 
   <footer class="footer" role="contentinfo">
     <div class="footer-content">
@@ -1438,7 +1423,7 @@
       } else {
           revealElements.forEach(el => el.classList.add('is-visible'));
       }
-
+      
       /**
        * ------------------------------------------------------------------------
        * 5. Gallery Carousel
