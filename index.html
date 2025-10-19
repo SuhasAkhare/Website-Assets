@@ -395,7 +395,7 @@
     }
     .dropdown-menu {
         position: absolute;
-        top: calc(100% + 15px); /* Position below the nav item */
+        top: calc(100% + 30px); /* Position below the nav item */
         left: 50%;
         transform: translateX(-50%) translateY(10px);
         background: rgba(30, 30, 30, 0.9);
@@ -1545,38 +1545,42 @@
        * 6. Dropdown Menu Logic
        * ------------------------------------------------------------------------
        */
-      const dropdownToggle = document.querySelector('.nav-item-has-dropdown > .nav-link');
-      const dropdownContainer = document.querySelector('.nav-item-has-dropdown');
+      const dropdownToggles = document.querySelectorAll('.nav-item-has-dropdown > .nav-link');
 
-      if (dropdownToggle && dropdownContainer) {
-          dropdownToggle.addEventListener('click', (e) => {
-              // On larger screens, the link's main purpose is to toggle the dropdown
-              if (window.innerWidth > 1024) {
-                  e.preventDefault();
+      dropdownToggles.forEach(toggle => {
+          const container = toggle.parentElement;
+          toggle.addEventListener('click', (e) => {
+              // On mobile, the main link should navigate. Let the hamburger handle the sub-menu.
+              if (window.innerWidth < 880) {
+                  return;
               }
-              // For all screens, toggle the dropdown visibility
-              dropdownContainer.classList.toggle('dropdown-open');
-              const isExpanded = dropdownContainer.classList.contains('dropdown-open');
-              dropdownToggle.setAttribute('aria-expanded', isExpanded);
+              e.preventDefault();
+              const isExpanded = container.classList.toggle('dropdown-open');
+              toggle.setAttribute('aria-expanded', isExpanded);
           });
+      });
 
-          // Close dropdown when clicking outside of it
-          document.addEventListener('click', (e) => {
-              if (!dropdownContainer.contains(e.target)) {
-                  dropdownContainer.classList.remove('dropdown-open');
-                  dropdownToggle.setAttribute('aria-expanded', 'false');
-              }
-          });
-
-          // Close dropdown with Escape key
-          document.addEventListener('keydown', (e) => {
-              if (e.key === 'Escape' && dropdownContainer.classList.contains('dropdown-open')) {
-                  dropdownContainer.classList.remove('dropdown-open');
-                  dropdownToggle.setAttribute('aria-expanded', 'false');
-                  dropdownToggle.focus(); // Return focus to the toggle button
+      // Close dropdowns when clicking outside
+      document.addEventListener('click', (e) => {
+          document.querySelectorAll('.nav-item-has-dropdown.dropdown-open').forEach(dropdown => {
+              if (!dropdown.contains(e.target)) {
+                  dropdown.classList.remove('dropdown-open');
+                  dropdown.querySelector('.nav-link').setAttribute('aria-expanded', 'false');
               }
           });
-      }
+      });
+
+      // Close dropdowns with Escape key
+      document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+              document.querySelectorAll('.nav-item-has-dropdown.dropdown-open').forEach(dropdown => {
+                  dropdown.classList.remove('dropdown-open');
+                  const toggle = dropdown.querySelector('.nav-link');
+                  toggle.setAttribute('aria-expanded', 'false');
+                  toggle.focus();
+              });
+          }
+      });
     });
   </script>
 </body>
