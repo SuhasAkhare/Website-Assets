@@ -155,7 +155,7 @@
       align-items: center;
       gap: 4px;
     }
-    .nav-link:hover, .nav-link:focus{
+    .nav-link:hover{
       background: rgba(255, 255, 255, 0.1);
       outline:none;
     }
@@ -165,9 +165,6 @@
         margin-left: 2px;
         transform: translateY(1px);
         transition: transform 0.2s ease;
-    }
-    .nav-item-has-dropdown.dropdown-open .nav-link::after {
-      transform: translateY(1px) rotate(180deg);
     }
 
     .menu-toggle{display:none; background:none;border:0; padding:10px; border-radius:8px; cursor:pointer;}
@@ -203,7 +200,7 @@
     .cta-primary{background:var(--accent);color:#fff;padding:12px 22px;border-radius:28px;font-weight:600;text-decoration:none;box-shadow:var(--shadow-soft);transition:transform .16s ease,box-shadow .16s ease, background-color .18s ease}
     .cta-primary:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(0,0,0,0.12)}
     .cta-primary:disabled{background:#999;cursor:not-allowed;transform:none;box-shadow:none}
-    .cta-ghost{background:transparent;border:1px solid #e6e6e6;color:var(--text);padding:10px 18px;border-radius:20px;text-decoration:none;font-weight:600}
+    .cta-ghost{background:transparent;border:1px solid #e6e6e6;color:var(--text);padding:10px 18px;border-radius:50px;text-decoration:none;font-weight:600}
     
     header.header .cta-ghost {
       color: #000000;
@@ -211,8 +208,7 @@
       border: 1px solid #ffffff;
       transition: transform .18s ease, background-color .18s ease;
     }
-    header.header .cta-ghost:hover,
-    header.header .cta-ghost:focus {
+    header.header .cta-ghost:hover {
       background: #ffffff;
       border-color: #ffffff;
       transform: scale(1.05);
@@ -413,7 +409,7 @@
         gap: 5px;
     }
     .nav-item-has-dropdown:hover .dropdown-menu,
-    .nav-item-has-dropdown.dropdown-open .dropdown-menu {
+    .nav-item-has-dropdown:focus-within .dropdown-menu {
         opacity: 1;
         visibility: visible;
         transform: translateX(-50%) translateY(0);
@@ -1558,28 +1554,6 @@
               const isExpanded = container.classList.toggle('dropdown-open');
               toggle.setAttribute('aria-expanded', isExpanded);
           });
-      });
-
-      // Close dropdowns when clicking outside
-      document.addEventListener('click', (e) => {
-          document.querySelectorAll('.nav-item-has-dropdown.dropdown-open').forEach(dropdown => {
-              if (!dropdown.contains(e.target)) {
-                  dropdown.classList.remove('dropdown-open');
-                  dropdown.querySelector('.nav-link').setAttribute('aria-expanded', 'false');
-              }
-          });
-      });
-
-      // Close dropdowns with Escape key
-      document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape') {
-              document.querySelectorAll('.nav-item-has-dropdown.dropdown-open').forEach(dropdown => {
-                  dropdown.classList.remove('dropdown-open');
-                  const toggle = dropdown.querySelector('.nav-link');
-                  toggle.setAttribute('aria-expanded', 'false');
-                  toggle.focus();
-              });
-          }
       });
     });
   </script>
