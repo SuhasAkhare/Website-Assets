@@ -54,7 +54,7 @@
 
     /* Basic reset */
     *{box-sizing:border-box}
-    html,body{height:100%}
+    html{scroll-behavior: smooth;}
     body{
       margin:0;
       font-family:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
@@ -90,15 +90,7 @@
     /* Typography helpers */
     h1,h2,h3,h4{margin:0;color:var(--text)}
     p{margin:0 0 0px 0;color:var(--muted)}
-    .section-title{
-      font-family:'Raleway',sans-serif;
-      font-weight:300;
-      letter-spacing:4px;
-      text-transform:uppercase;
-      font-size:18px;
-      margin:0 0 26px 0;
-      color:var(--text);
-    }
+    .container{max-width:var(--max-content-width);margin:0 auto;padding:0 30px}
 
     /* Header */
     header.header{
@@ -136,10 +128,10 @@
         align-items: center;
         gap: 8px;
     }
-
+    
     /* Navigation */
     nav.primary-nav{display:flex;gap:8px;align-items:center}
-    nav.primary-nav a{
+    .nav-link {
       color: #fff;
       text-decoration:none;
       padding:8px 12px;
@@ -147,11 +139,64 @@
       font-size:14px;
       font-weight:600;
       transition:all .18s ease;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
     }
-    nav.primary-nav a:hover, nav.primary-nav a:focus{
+    .nav-link:hover, .nav-link:focus{
       background: rgba(255, 255, 255, 0.1);
       outline:none;
     }
+    .nav-item-has-dropdown {
+        position: relative;
+    }
+    .nav-item-has-dropdown .nav-link::after {
+        content: '▼';
+        font-size: 0.6em;
+        margin-left: 2px;
+        transform: translateY(1px);
+        transition: transform 0.2s ease;
+    }
+    .nav-item-has-dropdown.dropdown-open .nav-link::after {
+      transform: translateY(1px) rotate(180deg);
+    }
+    .dropdown-menu {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 50%;
+        transform: translateX(-50%);
+        background: #fff;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-soft);
+        padding: 8px;
+        display: none;
+        min-width: 260px;
+        z-index: 1300;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .2s ease, visibility .2s ease, top .2s ease;
+    }
+    .nav-item-has-dropdown.dropdown-open .dropdown-menu {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        top: calc(100% + 5px);
+    }
+    .dropdown-item {
+        display: block;
+        padding: 8px 12px;
+        color: var(--text);
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 400;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover {
+        background: #f0f0f0;
+    }
+
     .menu-toggle{display:none; background:none;border:0; padding:10px; border-radius:8px; cursor:pointer;}
     .menu-toggle .bar{display:block;width:22px;height:2px;background:#fff;margin:4px 0;border-radius:2px;transition:transform .25s ease,opacity .2s ease}
 
@@ -160,11 +205,8 @@
     
     /* Hero */
     .hero-section{
-      min-height: 100svh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
+      min-height: 60vh;
+      display:flex;align-items:center;justify-content:center;text-align:center;
       padding: calc(var(--header-height) + 80px) 20px 80px;
       background:linear-gradient(180deg,#ffffff 0%, #fbfbfd 100%);
     }
@@ -183,9 +225,27 @@
       font-weight:300;font-size:16px;color:#444;margin-bottom:28px;
       max-width:720px;margin-left:auto;margin-right:auto;
     }
+    .cta-primary{background:var(--accent);color:#fff;padding:12px 22px;border-radius:28px;font-weight:600;text-decoration:none;box-shadow:var(--shadow-soft);transition:transform .16s ease,box-shadow .16s ease, background-color .18s ease}
+    .cta-primary:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(0,0,0,0.12)}
 
+    header.header .cta-ghost {
+      color: #000000;
+      background: #ffffff;
+      border: 1px solid #ffffff;
+      transition: transform .18s ease, background-color .18s ease;
+      padding:10px 18px;
+      border-radius:20px;
+      text-decoration:none;
+      font-weight:600
+    }
+    header.header .cta-ghost:hover,
+    header.header .cta-ghost:focus {
+      background: #ffffff;
+      border-color: #ffffff;
+      transform: scale(1.05);
+    }
+    
     /* Main Content */
-    main{padding-top:0}
     .content-section{padding:var(--section-gap) 10px; margin-top: 40px;}
     .bim-details-content { max-width: 800px; margin: 0 auto; }
     .text-block { margin-bottom: 50px; }
@@ -399,87 +459,6 @@
     :focus{outline:none}
     :focus-visible{outline:3px solid #222;outline-offset:3px;border-radius:6px}
 
-    /* small screens */
-    @media (max-width:880px){
-      .hero-sub{font-size:15px}
-      .about-content{flex-direction:column-reverse;align-items:center;text-align:center}
-      .hero-section{padding:36px 18px 80px}
-      .carousel-slide img{height:220px}
-    }
-
-    /* accessibility: reduced-motion */
-    @media (prefers-reduced-motion: reduce){
-      *{animation:none !important;transition:none!important}
-      .reveal { transition: none; }
-    }
-    
-    /* Improved Mobile Navigation */
-    @media (max-width: 880px) {
-      nav.primary-nav {
-        display: none; /* Hide by default */
-        position: fixed;
-        inset: 100px 0 0 0;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-        background: rgba(0, 0, 0, 0.98); /* Changed to black background for mobile menu */
-        backdrop-filter: blur(10px);
-        padding: 40px;
-        height: calc(100vh - var(--header-height));
-      }
-
-      nav.primary-nav a {
-        color: #fff;
-        transition: all .18s ease;
-      }
-      nav.primary-nav a:hover, nav.primary-nav a:focus {
-        background: rgba(255, 255, 255, 0.15);
-        outline: none;
-      }
-      
-      nav.primary-nav a.cta-ghost {
-          color: #000;
-          background: #fff;
-          border-color: #fff;
-          transition: transform .18s ease, background-color .18s ease;
-      }
-      nav.primary-nav a.cta-ghost:hover,
-      nav.primary-nav a.cta-ghost:focus {
-          background: #fff;
-          border-color: #fff;
-          transform: scale(1.05);
-          color: #000; /* Keep color explicit */
-      }
-      nav.primary-nav a.cta-ghost:active {
-          background: #f0f0f0;
-          border-color: #f0f0f0;
-          transform: scale(0.98);
-          color: #000; /* Keep color explicit */
-      }
-      
-      .menu-toggle { display: block; }
-      
-      body.nav-open nav.primary-nav {
-        display: flex;
-        border-radius: var(--radius);
-      }
-
-      body.nav-open .menu-toggle .bar:nth-child(1) {
-        transform: translateY(6px) rotate(45deg);
-      }
-      body.nav-open .menu-toggle .bar:nth-child(2) {
-        opacity: 0;
-      }
-      body.nav-open .menu-toggle .bar:nth-child(3) {
-        transform: translateY(-6px) rotate(-45deg);
-      }
-      
-      body.nav-open {
-        overflow: hidden;
-      }
-    }
-    
     /* Reveal-on-scroll animation classes */
     .reveal {
       opacity: 0;
@@ -494,28 +473,110 @@
       *{animation:none !important;transition:none!important}
       .reveal { transition: none; }
     }
+    
+    /* Responsive Styles */
+    @media (max-width: 880px) {
+      .container {
+        padding: 0 20px;
+      }
+      header.header {
+        inset: 15px;
+        padding: 8px 15px;
+        --header-height: 70px;
+      }
+      .logo-container {
+          width: 50px;
+          height: 50px;
+      }
+      .hero-section {
+        padding-top: 120px;
+        padding-bottom: 60px;
+        min-height: 50vh;
+      }
+      .footer-content {
+        gap: 30px;
+      }
+      .content-section {
+          margin-top: 20px;
+      }
+      nav.primary-nav {
+        display: none;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 15px;
+      }
+      header.header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        inset: auto;
+        border-radius: 0;
+        height: auto;
+        padding: 10px 15px;
+        background: #0b0b0b;
+      }
+      .header-right {
+          display: none;
+      }
+      .hero-section {
+        min-height: auto;
+        padding: 100px 15px 50px;
+      }
+      .hero-heading {
+        font-size: clamp(26px, 8vw, 34px);
+      }
+      .hero-sub {
+          font-size: 15px;
+      }
+       .scroll-up-btn {
+        right: 15px;
+        top: 15px;
+      }
+      .detail-subtitle {
+          font-size: 20px;
+      }
+      .cta-block h3 {
+          font-size: 22px;
+      }
+    }
   </style>
 </head>
 <body>
   <a class="skip-to-content" href="#main">Skip to content</a>
 
   <header class="header" role="banner">
-      <a href="../#main" class="logo-group" aria-label="Aarya Architects home">
+      <a href="index.html" class="logo-group" aria-label="Aarya Architects home">
         <div class="logo-container" aria-hidden="true">
           <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Aarya%20Architects%20Logo%20-%20Circular.png?raw=true" alt="Aarya Architects logo">
         </div>
         <div>
           <div class="site-title">Aarya Architects</div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.7);margin-top:2px">  </div>
         </div>
       </a>
 
       <div class="header-right">
         <nav class="primary-nav" role="navigation" aria-label="Primary navigation">
-          <a href="../#services">Services</a>
-          <a href="../#about">About</a>
-          <a href="../#gallery">Gallery</a>
-          <a href="../#contact" class="cta-ghost">Connect</a>
+          <div class="nav-item nav-item-has-dropdown">
+            <a href="index.html#services" class="nav-link" aria-haspopup="true" aria-expanded="false">Services</a>
+            <div class="dropdown-menu">
+                <a href="bim-details.html" class="dropdown-item">Building Information Modeling</a>
+                <a href="#" class="dropdown-item">Clash Coordination</a>
+                <a href="#" class="dropdown-item">Template & Families</a>
+                <a href="#" class="dropdown-item">Documentation & Detailing</a>
+                <a href="#" class="dropdown-item">Visualization</a>
+                <a href="#" class="dropdown-item">Architectural Design</a>
+            </div>
+          </div>
+          <a href="index.html#about" class="nav-link">About</a>
+          <a href="index.html#gallery" class="nav-link">Gallery</a>
+          <a href="index.html#contact" class="cta-ghost">Connect</a>
         </nav>
 
         <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
@@ -588,7 +649,7 @@
     <div class="footer-content">
       <div class="footer-left">
         <div class="footer-branding">
-          <a href="#main" class="logo-group">
+          <a href="index.html" class="logo-group">
             <div class="footer-logo-container">
               <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Aarya%20Architects%20Logo%20-%20Circular.png?raw=true" alt="Aarya Architects logo">
             </div>
@@ -601,18 +662,18 @@
         <div class="footer-nav-links">
           <div class="footer-nav-col">
             <h4>Navigate</h4>
-            <a href="#services">Services</a>
-            <a href="#about">About</a>
-            <a href="#gallery">Gallery</a>
+            <a href="index.html#services">Services</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#gallery">Gallery</a>
           </div>
           <div class="footer-nav-col">
             <h4>Our Services</h4>
-            <a href="#s1Label">Building Information Modeling</a>
-            <a href="index.html#services">Clash Coordination</a>
-            <a href="index.html#services">Template &amp; Families</a>
-            <a href="index.html#services">Documentation</a>
-            <a href="index.html#services">Visualization</a>
-            <a href="index.html#services">Architectural Design</a>
+            <a href="bim-details.html">Building Information Modeling</a>
+            <a href="#">Clash Coordination</a>
+            <a href="#">Template &amp; Families</a>
+            <a href="#">Documentation</a>
+            <a href="#">Visualization</a>
+            <a href="#">Architectural Design</a>
           </div>
         </div>
       </div>
@@ -652,19 +713,31 @@
        * ------------------------------------------------------------------------
        */
       document.body.addEventListener('click', (event) => {
-        const link = event.target.closest('a[href^="#"]');
+        const link = event.target.closest('a[href*="#"]');
         if (!link) return;
 
+        // Only process links with hashes that are not just "#"
         const href = link.getAttribute('href');
-        if (href.length <= 1) return;
+        const hashIndex = href.lastIndexOf('#');
+        if (hashIndex === -1 || href.length === hashIndex + 1) return;
 
-        const targetElement = document.querySelector(href);
+        // If it's a link to a different page, let the browser handle it.
+        // This checks if the path before the hash is different from the current page's path.
+        const currentPath = window.location.pathname.split('/').pop();
+        const linkPath = href.substring(0, hashIndex);
+        if (linkPath && linkPath !== currentPath && linkPath + '.html' !== currentPath) {
+            return;
+        }
+
+        const targetId = href.substring(hashIndex);
+        const targetElement = document.querySelector(targetId);
+
         if (targetElement) {
           event.preventDefault();
           
           if (document.body.classList.contains('nav-open')) {
               document.body.classList.remove('nav-open');
-              menuToggle.setAttribute('aria-expanded', 'false');
+              if(menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
           }
 
           const headerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height'), 10) || 86;
@@ -702,16 +775,57 @@
 
       /**
        * ------------------------------------------------------------------------
-       * 6. Auto-update Copyright Year
+       * 5. Auto-update Copyright Year
        * ------------------------------------------------------------------------
        */
        const yearSpan = document.getElementById('copyright-year');
        if(yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
        }
+
+      /**
+       * ------------------------------------------------------------------------
+       * 6. Dropdown Menu Logic
+       * ------------------------------------------------------------------------
+       */
+      const dropdownToggles = document.querySelectorAll('.nav-item-has-dropdown > .nav-link');
+
+      dropdownToggles.forEach(toggle => {
+          const container = toggle.parentElement;
+          toggle.addEventListener('click', (e) => {
+              // On mobile, the main link should navigate. Let the hamburger handle the sub-menu.
+              if (window.innerWidth < 880) {
+                  return;
+              }
+              e.preventDefault();
+              const isExpanded = container.classList.toggle('dropdown-open');
+              toggle.setAttribute('aria-expanded', isExpanded);
+          });
+      });
+
+      // Close dropdowns when clicking outside
+      document.addEventListener('click', (e) => {
+          document.querySelectorAll('.nav-item-has-dropdown.dropdown-open').forEach(dropdown => {
+              if (!dropdown.contains(e.target)) {
+                  dropdown.classList.remove('dropdown-open');
+                  dropdown.querySelector('.nav-link').setAttribute('aria-expanded', 'false');
+              }
+          });
+      });
+
+      // Close dropdowns with Escape key
+      document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+              document.querySelectorAll('.nav-item-has-dropdown.dropdown-open').forEach(dropdown => {
+                  dropdown.classList.remove('dropdown-open');
+                  const toggle = dropdown.querySelector('.nav-link');
+                  toggle.setAttribute('aria-expanded', 'false');
+                  toggle.focus();
+              });
+          }
+      });
     });
   </script>
 </body>
 </html>
-
 
