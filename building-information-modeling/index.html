@@ -13,10 +13,30 @@
   <meta property="og:description" content="Explore our comprehensive BIM services, designed to enhance project coordination, reduce risk, and streamline delivery from concept to completion." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://raw.githubusercontent.com/SuhasAkhare/Website-Assets/main/Aarya%20Architect%20Logo%20-%20Resized.png" />
-  <meta property="og:url" content="https://aaryaarchitects.com/building-information-modeling/" />
+  <meta property="og:url" content="https://aaryaarchitects.com/service-buildinginformationmodeling.html" />
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Raleway:wght@300;600&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Aarya Architects",
+    "url": "https://aaryaarchitects.com",
+    "logo": "https://github.com/SuhasAkhare/Website-Assets/blob/main/Aarya%20Architects%20Logo%20-%20Circular.png?raw=true",
+    "sameAs": [
+      "https://www.linkedin.com",
+      "https://www.instagram.com"
+    ],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "email": "suhas@aaryaarchitects.com",
+      "contactType": "customer service"
+    }],
+    "description": "BIM-focused studio providing Revit modeling, coordination, documentation, and visualization services."
+  }
+  </script>
 
   <style>
     :root{
@@ -79,7 +99,6 @@
       margin:0 0 26px 0;
       color:var(--text);
     }
-    .container{max-width:var(--max-content-width);margin:0 auto;padding:0 30px}
 
     /* Header */
     header.header{
@@ -102,14 +121,14 @@
     .logo-group{
       display:flex;
       align-items:center;
-      gap:14px;
+      gap:20px;
       text-decoration:none;
       color:inherit;
     }
     .logo-container{
-      width:70px;height:70px;border-radius:50%;overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-light)
+      width:60px;height:60px;border-radius:50%;overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-light)
     }
-    .logo-container img{width:60%;height:auto;display:block}
+    .logo-container img{width:80%;height:auto;display:block}
     .site-title{font-family:'Raleway',sans-serif;font-size:16px;font-weight:600;letter-spacing:1px}
 
     .header-right {
@@ -136,26 +155,8 @@
     .menu-toggle{display:none; background:none;border:0; padding:10px; border-radius:8px; cursor:pointer;}
     .menu-toggle .bar{display:block;width:22px;height:2px;background:#fff;margin:4px 0;border-radius:2px;transition:transform .25s ease,opacity .2s ease}
 
-    /* Buttons */
-    .cta-primary{background:var(--accent);color:#fff;padding:12px 22px;border-radius:28px;font-weight:600;text-decoration:none;box-shadow:var(--shadow-soft);transition:transform .16s ease,box-shadow .16s ease, background-color .18s ease; display: inline-block;}
-    .cta-primary:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(0,0,0,0.12)}
-    
-    header.header .cta-ghost {
-      color: #000000;
-      background: #ffffff;
-      border: 1px solid #ffffff;
-      transition: transform .18s ease, background-color .18s ease;
-      padding:10px 18px;
-      border-radius:20px;
-      text-decoration:none;
-      font-weight:600;
-    }
-    header.header .cta-ghost:hover,
-    header.header .cta-ghost:focus {
-      background: #ffffff;
-      border-color: #ffffff;
-      transform: scale(1.05);
-    }
+    /* Main */
+    main{padding-top:0}
     
     /* Hero */
     .hero-section{
@@ -393,6 +394,91 @@
       box-shadow: 0 7px 16px rgba(0,0,0,0.2);
       background-color: #f8f8f8;
     }
+
+    /* focus-visible for keyboard users */
+    :focus{outline:none}
+    :focus-visible{outline:3px solid #222;outline-offset:3px;border-radius:6px}
+
+    /* small screens */
+    @media (max-width:880px){
+      .hero-sub{font-size:15px}
+      .about-content{flex-direction:column-reverse;align-items:center;text-align:center}
+      .hero-section{padding:36px 18px 80px}
+      .carousel-slide img{height:220px}
+    }
+
+    /* accessibility: reduced-motion */
+    @media (prefers-reduced-motion: reduce){
+      *{animation:none !important;transition:none!important}
+      .reveal { transition: none; }
+    }
+    
+    /* Improved Mobile Navigation */
+    @media (max-width: 880px) {
+      nav.primary-nav {
+        display: none; /* Hide by default */
+        position: fixed;
+        inset: 100px 0 0 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        background: rgba(0, 0, 0, 0.98); /* Changed to black background for mobile menu */
+        backdrop-filter: blur(10px);
+        padding: 40px;
+        height: calc(100vh - var(--header-height));
+      }
+
+      nav.primary-nav a {
+        color: #fff;
+        transition: all .18s ease;
+      }
+      nav.primary-nav a:hover, nav.primary-nav a:focus {
+        background: rgba(255, 255, 255, 0.15);
+        outline: none;
+      }
+      
+      nav.primary-nav a.cta-ghost {
+          color: #000;
+          background: #fff;
+          border-color: #fff;
+          transition: transform .18s ease, background-color .18s ease;
+      }
+      nav.primary-nav a.cta-ghost:hover,
+      nav.primary-nav a.cta-ghost:focus {
+          background: #fff;
+          border-color: #fff;
+          transform: scale(1.05);
+          color: #000; /* Keep color explicit */
+      }
+      nav.primary-nav a.cta-ghost:active {
+          background: #f0f0f0;
+          border-color: #f0f0f0;
+          transform: scale(0.98);
+          color: #000; /* Keep color explicit */
+      }
+      
+      .menu-toggle { display: block; }
+      
+      body.nav-open nav.primary-nav {
+        display: flex;
+        border-radius: var(--radius);
+      }
+
+      body.nav-open .menu-toggle .bar:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+      }
+      body.nav-open .menu-toggle .bar:nth-child(2) {
+        opacity: 0;
+      }
+      body.nav-open .menu-toggle .bar:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+      }
+      
+      body.nav-open {
+        overflow: hidden;
+      }
+    }
     
     /* Reveal-on-scroll animation classes */
     .reveal {
@@ -408,84 +494,33 @@
       *{animation:none !important;transition:none!important}
       .reveal { transition: none; }
     }
-
-    /* --- Responsive Optimizations --- */
-    @media (max-width: 880px) {
-      .container {
-        padding: 0 20px;
-      }
-      header.header {
-        inset: 15px;
-        padding: 8px 15px;
-      }
-      .hero-section {
-        padding-top: 120px;
-        padding-bottom: 60px;
-        min-height: 70svh;
-      }
-      nav.primary-nav a {
-        font-size: 13px;
-        padding: 6px 10px;
-      }
-      .footer-content {
-        gap: 30px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        padding: 0 15px;
-      }
-      header.header {
-        position: absolute; /* Change from fixed to save space */
-        inset: 10px;
-        height: auto;
-        padding: 10px;
-      }
-      /* Hide complex nav on detail page on mobile, user can go back via logo */
-      .header-right {
-          display: none;
-      }
-      .hero-section {
-        min-height: auto; /* Let content define height */
-        padding: 140px 15px 50px;
-      }
-      .hero-heading {
-        font-size: clamp(26px, 8vw, 32px);
-      }
-      .footer-content {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-       .scroll-up-btn {
-        right: 15px;
-        top: 15px;
-      }
-    }
   </style>
 </head>
 <body>
   <a class="skip-to-content" href="#main">Skip to content</a>
 
   <header class="header" role="banner">
-      <a href="index.html" class="logo-group" aria-label="Aarya Architects home">
+      <a href="#main" class="logo-group" aria-label="Aarya Architects home">
         <div class="logo-container" aria-hidden="true">
-          <img src="https://raw.githubusercontent.com/SuhasAkhare/Website-Assets/main/Aarya%20Architect%20Logo%20-%20Resized.png" alt="Aarya Architects logo">
+          <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Aarya%20Architects%20Logo%20-%20Circular.png?raw=true" alt="Aarya Architects logo">
         </div>
         <div>
           <div class="site-title">Aarya Architects</div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.7);margin-top:2px">BIM Services</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.7);margin-top:2px">  </div>
         </div>
       </a>
 
       <div class="header-right">
         <nav class="primary-nav" role="navigation" aria-label="Primary navigation">
-          <a href="/#services">Services</a>
-          <a href="/#about">About</a>
-          <a href="/#gallery">Gallery</a>
-          <a href="/#contact" class="cta-ghost">Connect</a>
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact" class="cta-ghost">Connect</a>
         </nav>
-        <!-- Mobile menu is JS-driven so it's not included here to keep this page static -->
+
+        <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
       </div>
   </header>
 
@@ -541,7 +576,7 @@
                   <div class="cta-block reveal">
                       <h3>Ready to Streamline Your Next Project?</h3>
                       <p>Let's discuss how our expert BIM services can bring efficiency, clarity, and precision to your design and construction workflow.</p>
-                      <a href="/#contact" class="cta-primary">Get a Project Proposal</a>
+                      <a href="index.html#contact" class="cta-primary">Get a Project Proposal</a>
                   </div>
 
               </div>
@@ -555,7 +590,7 @@
         <div class="footer-branding">
           <a href="index.html" class="logo-group">
             <div class="footer-logo-container">
-              <img src="https://raw.githubusercontent.com/SuhasAkhare/Website-Assets/main/Aarya%20Architect%20Logo%20-%20Resized.png" alt="Aarya Architects logo">
+              <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Aarya%20Architects%20Logo%20-%20Circular.png?raw=true" alt="Aarya Architects logo">
             </div>
             <div>
               <span class="footer-site-title">Aarya Architects</span>
@@ -566,13 +601,13 @@
         <div class="footer-nav-links">
           <div class="footer-nav-col">
             <h4>Navigate</h4>
-            <a href="/#services">Services</a>
-            <a href="/#about">About</a>
-            <a href="/#gallery">Gallery</a>
+            <a href="index.html#services">Services</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#gallery">Gallery</a>
           </div>
           <div class="footer-nav-col">
             <h4>Our Services</h4>
-            <a href="/#services">Building Information Modeling</a>
+            <a href="index.html#services">Building Information Modeling</a>
             <a href="index.html#services">Clash Coordination</a>
             <a href="index.html#services">Template &amp; Families</a>
             <a href="index.html#services">Documentation</a>
@@ -580,11 +615,6 @@
             <a href="index.html#services">Architectural Design</a>
           </div>
         </div>
-      </div>
-      <div class="footer-right">
-        <h4>Connect</h4>
-        <p>Email: <a href="mailto:info@aaryaarchitects.com">info@aaryaarchitects.com</a></p>
-        <p>Based in India</p>
       </div>
     </div>
     <div class="footer-bottom">
@@ -599,14 +629,27 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Auto-update Copyright Year
-      const yearSpan = document.getElementById('copyright-year');
-      if(yearSpan) {
-       yearSpan.textContent = new Date().getFullYear();
+      
+      /**
+       * ------------------------------------------------------------------------
+       * 1. Mobile Navigation Toggle
+       * ------------------------------------------------------------------------
+       */
+      const menuToggle = document.querySelector('.menu-toggle');
+      const primaryNav = document.querySelector('.primary-nav');
+
+      if (menuToggle && primaryNav) {
+        menuToggle.addEventListener('click', () => {
+          const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+          menuToggle.setAttribute('aria-expanded', !isExpanded);
+          document.body.classList.toggle('nav-open');
+        });
       }
 
       /**
-       * Smooth Scrolling for Anchor Links
+       * ------------------------------------------------------------------------
+       * 2. Smooth Scrolling for Anchor Links
+       * ------------------------------------------------------------------------
        */
       document.body.addEventListener('click', (event) => {
         const link = event.target.closest('a[href^="#"]');
@@ -618,7 +661,14 @@
         const targetElement = document.querySelector(href);
         if (targetElement) {
           event.preventDefault();
-          const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+          
+          if (document.body.classList.contains('nav-open')) {
+              document.body.classList.remove('nav-open');
+              menuToggle.setAttribute('aria-expanded', 'false');
+          }
+
+          const headerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height'), 10) || 86;
+          const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight - 10;
           
           window.scrollTo({
             top: targetPosition,
@@ -627,7 +677,11 @@
         }
       });
 
-      // Reveal Elements on Scroll
+      /**
+       * ------------------------------------------------------------------------
+       * 3. Reveal Elements on Scroll using Intersection Observer
+       * ------------------------------------------------------------------------
+       */
       const revealElements = document.querySelectorAll('.reveal');
       if ('IntersectionObserver' in window) {
         const observer = new IntersectionObserver((entries, observer) => {
@@ -645,7 +699,19 @@
       } else {
           revealElements.forEach(el => el.classList.add('is-visible'));
       }
+
+      /**
+       * ------------------------------------------------------------------------
+       * 6. Auto-update Copyright Year
+       * ------------------------------------------------------------------------
+       */
+       const yearSpan = document.getElementById('copyright-year');
+       if(yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+       }
     });
   </script>
 </body>
 </html>
+
+
