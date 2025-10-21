@@ -266,7 +266,7 @@
     /* Services grid */
     .services-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
       gap:22px;
       align-items:stretch;
     }
@@ -275,12 +275,12 @@
       position: relative;
       overflow: hidden;
       background: #fff;
-      border-radius: 14px;
+      border-radius: 0px;
       box-shadow: var(--shadow-light);
       padding: 20px;
       display: flex;
       flex-direction: column;
-      min-height: 300px;
+      min-height: 250px;
       transition: transform 0.3s cubic-bezier(.2,.9,.25,1), box-shadow 0.3s cubic-bezier(.2,.9,.25,1);
     }
 
@@ -288,20 +288,6 @@
       transition: opacity 0.4s ease, transform 0.4s ease;
     }
     
-    .service-card-details {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, #0b0b0b, #111);
-      color: #fff;
-      padding: 20px;
-      opacity: 0;
-      min-height: 300px;
-      transform: translateY(10px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
-      display: flex;
-      flex-direction: column;
-    }
-
     .service-icon{
       width:72px;height:72px;border-radius:10px;background:#ffffff;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:16px;
       flex-shrink:0;
@@ -537,31 +523,38 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 22px;
+      justify-content: center;
     }
     .gallery-item-title {
       font-family: 'Raleway', sans-serif;
       font-size: 15px;
       margin-bottom: 8px;
+      text-align: center;
       font-weight: 600;
     }
     .carousel-container {
       position: relative;
       border-radius: 0px;
       overflow: hidden;
+      text-align: center;
     }
     .carousel-slides {
       display: flex;
       transition: transform 0.5s ease-in-out;
+      min-width: 100%;
     }
     .carousel-slide {
       min-width: 100%;
       position: relative; /* for caption positioning */
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .carousel-slide img {
       width: 100%;
       height: 100%;
       object-fit: contain;
-      display: block;
     }
     .carousel-btn {
         position: absolute;
@@ -588,10 +581,10 @@
         background-color: rgba(255, 255, 255, 0.3);
     }
     .carousel-btn.prev {
-        left: 16px;
+        left: 10px;
     }
     .carousel-btn.next {
-        right: 16px;
+        right: 10px;
     }
     .carousel-btn svg {
       width: 24px;
@@ -886,9 +879,9 @@
   <main id="main" role="main">
     <section class="hero-section" aria-label="Introduction">
       <div class="hero-inner container">
-        <div class="hero-eyebrow">Our Core Service</div>
+        <div class="hero-eyebrow">From Concept to As-Built.</div>
         <h1 class="hero-heading">Building Information Modeling (BIM).</h1>
-        <p class="hero-sub">We transform your designs into data-rich, intelligent 3D models that streamline coordination, reduce risk, and ensure project-wide clarity from concept to completion.</p>
+        <p class="hero-sub">We deliver flawless, multi-disciplinary BIM models (LOD 100 to 500), guaranteeing your project is ready for construction, fabrication, coordination, and facility management.</p>
         <div class="hero-actions">
           <a class="cta-primary" href="#contact">Discuss Your Project</a>
         </div>
@@ -1045,53 +1038,6 @@
               <button class="carousel-btn next" aria-label="Next slide"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
             </div>
           </div>
-
-          <!-- Carousel 2: Airport Hanger -->
-          <div class="reveal">
-            <h3 class="gallery-item-title">Airport Hanger</h3>
-            <div class="carousel-container" role="region" aria-label="Corporate projects gallery">
-              <div class="carousel-slides">
-                <div class="carousel-slide" role="group" aria-label="slide 1 of 4">
-                  <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/01%20Hanger.jpg?raw=true" alt="Office interior" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/400x280/f0f0f0/999?text=Image'">
-                </div>
-                <div class="carousel-slide" role="group" aria-label="slide 2 of 4">
-                  <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/02%20Hanger.jpg?raw=true" alt="Modern collaborative office space" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/400x280/f0f0f0/999?text=Image'">
-                </div>
-                <div class="carousel-slide" role="group" aria-label="slide 3 of 4">
-                  <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/03%20Hanger.jpg?raw=true" alt="Modern office building exterior" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/400x280/f0f0f0/999?text=Image'">
-                </div>
-                <div class="carousel-slide" role="group" aria-label="slide 4 of 4">
-                  <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/04%20Hanger.jpg?raw=true" alt="Bright and airy meeting room" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/400x280/f0f0f0/999?text=Image'">
-                </div>
-              </div>
-              <button class="carousel-btn prev" aria-label="Previous slide"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-              <button class="carousel-btn next" aria-label="Next slide"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
-            </div>
-          </div>
-
-          <!-- Carousel 3: Container Homes -->
-          <div class="reveal">
-            <h3 class="gallery-item-title">Container Homes</h3>
-            <div class="carousel-container" role="region" aria-label="Container Homes">
-              <div class="carousel-slides">
-                <div class="carousel-slide" role="group" aria-label="slide 1 of 4">
-                  <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/013SQ.jpg?raw=true" alt="Luxury villa pool" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/400x280/f0f0f0/999?text=Image'">
-                </div>
-                <div class="carousel-slide" role="group" aria-label="slide 2 of 4">
-                  <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/023SQ.jpg?raw=true" alt="Modern villa exterior at dusk" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/400x280/f0f0f0/999?text=Image'">
-                </div>
-                <div class="carousel-slide" role="group" aria-label="slide 3 of 4">
-                  <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/033SQ.jpg?raw=true" alt="Minimalist villa interior" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/400x280/f0f0f0/999?text=Image'">
-                </div>
-                <div class="carousel-slide" role="group" aria-label="slide 4 of 4">
-                  <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/043SQ.jpg?raw=true" alt="Bedroom with a large window view" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/400x280/f0f0f0/999?text=Image'">
-                </div>
-              </div>
-              <button class="carousel-btn prev" aria-label="Previous slide"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-              <button class="carousel-btn next" aria-label="Next slide"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
