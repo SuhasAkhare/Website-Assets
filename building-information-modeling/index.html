@@ -463,6 +463,82 @@
       }
     }
 
+    /* --- LOD PROGRESSION STYLES --- */
+
+.lod-progress-section {
+    background-color: var(--bg); /* Use your existing background color */
+    padding-bottom: 50px;
+}
+
+.lod-progress-grid {
+    display: grid;
+    /* 3 columns on desktop, 1 column on mobile */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.lod-block {
+    background-color: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    border-radius: var(--radius);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    min-height: 180px; /* Ensures visual consistency */
+    position: relative;
+    box-shadow: var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+.lod-block:hover {
+    background-color: #ffffff;
+    border-color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.lod-block h4 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 10px;
+}
+
+.lod-block p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.lod-level-tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--accent);
+    color: #fff;
+    padding: 6px 12px;
+    border-bottom-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Optional: Color coding for the progression */
+.lod-block:nth-child(1) .lod-level-tag { background-color: #4CAF50; } /* Concept */
+.lod-block:nth-child(2) .lod-level-tag { background-color: #2196F3; } /* Schematic */
+.lod-block:nth-child(3) .lod-level-tag { background-color: #FFC107; } /* Detailed */
+.lod-block:nth-child(4) .lod-level-tag { background-color: #FF5722; } /* Coordination */
+.lod-block:nth-child(5) .lod-level-tag { background-color: #9C27B0; } /* Fabrication */
+.lod-block:nth-child(6) .lod-level-tag { background-color: #000000; } /* As-Built */
+
+/* Mobile adjustment for smaller screens */
+@media (max-width: 600px) {
+    .lod-progress-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
     /* -- The Value We Deliver Section -- */
     .value-list {
       margin-top: 32px;
@@ -895,8 +971,8 @@
 
     <section id="services" class="content-section">
       <div class="container">
-        <p style="font-size:15px;margin-bottom:15px;max-width:1150px">With inaccurate 2D plans, how can you ensure your final documentation is fully coordinated and guarantees construction certainty?</p>
-        <p style="font-size:15px;margin-bottom:15px;max-width:1150px">We ensure your final documentation is fully coordinated and guarantees construction certainty by shifting the source of truth from fallible 2D drawings to a validated, centralized 3D model.</p>
+        <p style="font-size:15px;margin-bottom:15px;max-width:1150px">With 2D plans, how can you ensure your final documentation is fully coordinated and guarantees construction certainty?</p>
+        <p style="font-size:15px;margin-bottom:15px;max-width:1150px">We ensure your final documentation is fully coordinated and guarantees construction certainty by shifting the source of truth from 2D drawings to a centralized 3D model.</p>
         <h2 class="section-title">Our BIM Services.</h2>
       <div class="services-grid" role="list">
 
@@ -941,6 +1017,53 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="content-section lod-progress-section" aria-labelledby="lodProgressTitle">
+    <div class="container">
+        <h2 id="lodProgressTitle" class="section-title">Model Reliability (LOD) Progression</h2>
+        <p class="section-lead-in;font-size:15px;margin-bottom:15px;max-width:1150px">The Level of Development (LOD) defines the reliability of model data. We ensure every element progresses from generic concepts to field-verified assets.</p>
+
+        <div class="lod-progress-grid">
+            
+            <div class="lod-block">
+                <div class="lod-level-tag">LOD 100</div>
+                <h4>Conceptual Design</h4>
+                <p>Represents overall massing and conceptual data. Used for initial budgeting and volume studies.</p>
+            </div>
+            
+            <div class="lod-block">
+                <div class="lod-level-tag">LOD 200</div>
+                <h4>Approximate Geometry</h4>
+                <p>Elements modeled as generic systems with approximate size and location. Used for preliminary clash detection.</p>
+            </div>
+            
+            <div class="lod-block">
+                <div class="lod-level-tag">LOD 300</div>
+                <h4>Precise Geometry</h4>
+                <p>Elements modeled as specific objects with accurate size and location. Ready for detailed **Construction Documents**.</p>
+            </div>
+            
+            <div class="lod-block">
+                <div class="lod-level-tag">LOD 350</div>
+                <h4>Coordination Interface</h4>
+                <p>Includes detailing of connections and interfaces necessary for **multi-discipline coordination** and assembly.</p>
+            </div>
+            
+            <div class="lod-block">
+                <div class="lod-level-tag">LOD 400</div>
+                <h4>Fabrication Ready</h4>
+                <p>Elements modeled as complete assemblies with full installation and shop drawing information.</p>
+            </div>
+            
+            <div class="lod-block">
+                <div class="lod-level-tag">LOD 500</div>
+                <h4>As-Built & FM</h4>
+                <p>Field-verified model reflecting final constructed conditions. Ready for **Facility Management** operations.</p>
+            </div>
+            
+        </div>
+    </div>
     </section>
 
     <section id="process" class="content-section" aria-labelledby="processTitle">
