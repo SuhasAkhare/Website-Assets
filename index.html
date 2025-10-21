@@ -93,51 +93,15 @@
     /* Typography helpers */
     h1,h2,h3,h4{margin:0;color:var(--text)}
     p{margin:0 0 0px 0;color:var(--muted)}
-    
-    /* 1. INCREASED BASE FONT SIZE FOR SECTION HEADINGS */
     .section-title{
       font-family:'Raleway',sans-serif;
       font-weight:300;
       letter-spacing:4px;
       text-transform:uppercase;
-      font-size:17px; /* Increased from 15px */
+      font-size:15px;
       margin:0 0 26px 0;
       color:var(--text);
     }
-
-    /* 2. INCREASED BASE FONT SIZE FOR HERO HEADING */
-    .hero-heading{
-      font-family:'Raleway',sans-serif;
-      font-weight:600;
-      font-size:30px; /* Increased from 25px */
-      line-height:1.02;
-      letter-spacing:2px;
-      margin-bottom:18px;
-      color:var(--accent);
-    }
-
-    /* 3. INCREASED BASE FONT SIZE FOR HERO SUBTITLE */
-    .hero-sub{
-      font-weight:300;
-      font-size:16px; /* Increased from 15px */
-      color:#444;
-      margin-bottom:28px;
-      max-width:720px;
-      margin-left:auto;
-      margin-right:auto;
-    }
-
-    /* NEW CLASS FOR INTRODUCTORY PARAGRAPHS */
-    .section-intro-p {
-        font-size: 16px; /* Increased from 15px for readability */
-        color: var(--muted);
-        margin-bottom: 18px;
-        max-width: 860px;
-    }
-    .section-intro-p:last-child {
-        margin-bottom: 0;
-    }
-
 
     /* Header */
     header.header{
@@ -215,11 +179,23 @@
       display:flex;align-items:center;justify-content:center;text-align:center;
       padding: calc(var(--header-height) + 40px) 20px 80px;
       background:linear-gradient(180deg,#ffffff 0%, #fbfbfd 100%);
-      position: relative; 
+      position: relative; /* Added for positioning */
     }
     .hero-inner{max-width:920px}
     .hero-eyebrow{font-family:'Montserrat',sans-serif;text-transform:uppercase;letter-spacing:3px;font-size:14px;color:var(--muted);margin-bottom:18px}
-    
+    .hero-heading{
+      font-family:'Raleway',sans-serif;
+      font-weight:600;
+      font-size:25px;
+      line-height:1.02;
+      letter-spacing:2px;
+      margin-bottom:18px;
+      color:var(--accent);
+    }
+    .hero-sub{
+      font-weight:300;font-size:15px;color:#444;margin-bottom:28px;
+      max-width:720px;margin-left:auto;margin-right:auto;
+    }
     .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;padding: 5px}
     .cta-primary{background:var(--accent);color:#fff;padding:12px 22px;border-radius:28px;font-weight:600;text-decoration:none;box-shadow:var(--shadow-soft);transition:transform .16s ease,box-shadow .16s ease, background-color .18s ease}
     .cta-primary:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(0,0,0,0.12)}
@@ -300,7 +276,7 @@
       padding: 20px;
       display: flex;
       flex-direction: column;
-      max-height: 280px;
+      min-height: 300px;
       transition: transform 0.3s cubic-bezier(.2,.9,.25,1), box-shadow 0.3s cubic-bezier(.2,.9,.25,1);
     }
 
@@ -320,7 +296,7 @@
       color: #fff;
       padding: 20px;
       opacity: 0;
-      max-height: 280px;
+      min-height: 300px;
       transform: translateY(10px);
       transition: opacity 0.4s ease, transform 0.4s ease;
       display: flex;
@@ -432,19 +408,11 @@
         flex-direction: column;
         gap: 5px;
     }
-    .nav-item-has-dropdown.dropdown-open .dropdown-menu,
+    .nav-item-has-dropdown:hover .dropdown-menu,
     .nav-item-has-dropdown:focus-within .dropdown-menu {
         opacity: 1;
         visibility: visible;
         transform: translateX(-50%) translateY(0);
-    }
-    /* Re-enabling hover on desktop for convenience */
-    @media (min-width: 881px) {
-        .nav-item-has-dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(-50%) translateY(0);
-        }
     }
     .dropdown-item {
         color: #fff;
@@ -462,7 +430,7 @@
         outline: none;
     }
 
-    /* -- Our Working Process Section -- */
+    /* -- NEW: Our Working Process Section -- */
     .process-list {
       margin-top: 32px;
     }
@@ -568,7 +536,7 @@
     .project-card h4{font-family:'Raleway',sans-serif;font-size:14px;margin:5px;letter-spacing:1px}
 
     /* About */
-    .about-content{display:flex;gap:36px;align-items:center;justify-content:space-between;flex-wrap:wrap; flex-direction: row;}
+    .about-content{display:column;gap:36px;align-items:center;justify-content:space-between;flex-wrap:wrap}
     .about-text{flex:1;min-width:260px;font-size:14px;}
     .about-images-group{display: flex;padding:10px;gap:50px;align-items: center;flex-wrap: nowrap;flex-direction: row;justify-content: center;}
     .about-person-card{text-align:center;min-width:160px}
@@ -591,7 +559,6 @@
       position: relative;
       border-radius: 0px;
       overflow: hidden;
-      outline: none; /* Focus outline managed by :focus-visible */
     }
     .carousel-slides {
       display: flex;
@@ -802,18 +769,6 @@
       .about-content{flex-direction:column-reverse;align-items:center;text-align:center}
       .hero-section{padding:40px 18px 80px}
       .carousel-slide img{height:220px}
-      /* Reduce font size for hero heading back on small screens for better fit */
-      .hero-heading{
-          font-size: 25px; 
-      }
-      /* Reduce font size for section title back on small screens */
-      .section-title {
-          font-size: 15px;
-      }
-      /* Reduce font size for intro text back on small screens */
-      .section-intro-p {
-          font-size: 15px;
-      }
     }
 
     /* accessibility: reduced-motion */
@@ -827,23 +782,20 @@
       nav.primary-nav {
         display: none; /* Hide by default */
         position: fixed;
-        inset: 100px 10px 10px 10px;
+        inset: 100px 0 0 0;
         flex-direction: column;
-        align-items: stretch; /* Stretch links for easier tapping */
-        justify-content: flex-start; /* Start content at the top */
-        gap: 10px; /* Reduced gap */
-        background: rgba(0, 0, 0, 0.98); 
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        background: rgba(0, 0, 0, 0.98); /* Changed to black background for mobile menu */
         backdrop-filter: blur(10px);
-        padding: 20px;
-        height: calc(100vh - 120px); /* Adjusted height calculation for floating header */
-        overflow-y: auto; /* Allow scrolling */
-        border-radius: var(--radius);
+        padding: 40px;
+        height: calc(100vh - var(--header-height));
       }
 
       nav.primary-nav a {
         color: #fff;
         transition: all .18s ease;
-        width: 100%;
       }
       nav.primary-nav a:hover, nav.primary-nav a:focus {
         background: rgba(255, 255, 255, 0.15);
@@ -855,46 +807,28 @@
           background: #fff;
           border-color: #fff;
           transition: transform .18s ease, background-color .18s ease;
-          margin-top: 10px;
       }
       nav.primary-nav a.cta-ghost:hover,
       nav.primary-nav a.cta-ghost:focus {
           background: #fff;
           border-color: #fff;
-          transform: scale(1.01);
-          color: #000;
+          transform: scale(1.05);
+          color: #000; /* Keep color explicit */
+      }
+      nav.primary-nav a.cta-ghost:active {
+          background: #f0f0f0;
+          border-color: #f0f0f0;
+          transform: scale(0.98);
+          color: #000; /* Keep color explicit */
       }
       
       .menu-toggle { display: block; }
       
       body.nav-open nav.primary-nav {
         display: flex;
+        border-radius: var(--radius);
       }
 
-      /* Mobile Dropdown Adjustments (Stacking) */
-      .dropdown-menu {
-        position: static; 
-        transform: none;
-        width: 100%;
-        max-height: 0;
-        overflow: hidden;
-        opacity: 1;
-        visibility: visible;
-        padding: 0 10px;
-        transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-        background: transparent;
-        box-shadow: none;
-        margin-top: 0;
-      }
-      .nav-item-has-dropdown.dropdown-open .dropdown-menu {
-        max-height: 300px; 
-        padding: 10px 10px;
-      }
-      .dropdown-item {
-        padding: 8px 15px;
-        background-color: rgba(255, 255, 255, 0.05);
-      }
-      
       body.nav-open .menu-toggle .bar:nth-child(1) {
         transform: translateY(6px) rotate(45deg);
       }
@@ -937,16 +871,16 @@
       </a>
 
       <div class="header-right">
-        <nav class="primary-nav" role="navigation" aria-label="Primary navigation" id="primary-nav">
+        <nav class="primary-nav" role="navigation" aria-label="Primary navigation">
           <div class="nav-item nav-item-has-dropdown">
-            <a class="nav-link" href="#services" aria-haspopup="true" aria-expanded="false" data-dropdown-toggle="services-menu">Services</a>
-            <div class="dropdown-menu" id="services-menu">
-                <a href="#services" class="dropdown-item">Building Information Modeling</a>
-                <a href="#services" class="dropdown-item">Clash Coordination</a>
-                <a href="#services" class="dropdown-item">Template & Families</a>
-                <a href="#services" class="dropdown-item">Documentation & Detailing</a>
-                <a href="#services" class="dropdown-item">Visualization</a>
-                <a href="#services" class="dropdown-item">Architectural Design</a>
+            <a class="nav-link" aria-haspopup="true" aria-expanded="false">Services</a>
+            <div class="dropdown-menu">
+                <a href="building-information-modeling/" class="dropdown-item">Building Information Modeling</a>
+                <a href="#service-coordination" class="dropdown-item">Clash Coordination</a>
+                <a href="#service-templates" class="dropdown-item">Template & Families</a>
+                <a href="#service-documentation" class="dropdown-item">Documentation & Detailing</a>
+                <a href="#service-visualization" class="dropdown-item">Visualization</a>
+                <a href="#service-design" class="dropdown-item">Architectural Design</a>
             </div>
           </div>
           <a href="#about" class="nav-link">About</a>
@@ -980,14 +914,13 @@
     <section id="services" class="content-section">
       <div class="container">
         <h2 class="section-title">The BIM Services You Need</h2>
-        <!-- Used new class section-intro-p -->
-        <p class="section-intro-p">BIM support. We integrate seamlessly as your dedicated remote BIM team, ensuring your models are perfectly managed, coordinated, and construction-ready.</p>
+        <p style="color:var(--muted);font-size:15px;margin-bottom:15px;max-width:860px">BIM support. We integrate seamlessly as your dedicated remote BIM team, ensuring your models are perfectly managed, coordinated, and construction-ready.</p>
 
         <div class="services-grid" role="list">
 
           <div class="service-card reveal" role="listitem" aria-labelledby="s1Label">
             <div class="service-card-content">
-              <div class="service-icon" aria-hidden="true"><img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/3D%20Modelling.png?raw=true" alt="Building Information Modeling icon" onerror="this.onerror=null; this.src='https://placehold.co/72x72/f0f0f0/999?text=BIM'"></div>
+              <div class="service-icon" aria-hidden="true"><img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/3D%20Modelling.png?raw=true" alt="Building Information Modeling icon"></div>
               <h3 id="s1Label">Building Information Modeling</h3>
               <p>We provide detailed BIM models upto LOD 500 across Architecture, Structure, MEP, and Firefighting disciplines with parametric families for seamless, build-ready integration.</p>
             </div>
@@ -1010,7 +943,7 @@
 
           <div class="service-card reveal" role="listitem" aria-labelledby="s2Label">
             <div class="service-card-content">
-              <div class="service-icon" aria-hidden="true"><img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Clash%20Coordination.png?raw=true" alt="Clash Coordination icon" onerror="this.onerror=null; this.src='https://placehold.co/72x72/f0f0f0/999?text=CLASH'"></div>
+              <div class="service-icon" aria-hidden="true"><img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Clash%20Coordination.png?raw=true" alt="Clash Coordination icon"></div>
               <h3 id="s2Label">Clash Coordination</h3>
               <p>We provide detailed Clash Reports and full Clash Resolutions with centralized issue tracking across all MEPF, Architecture, and Structure disciplines.</p>
             </div>
@@ -1033,7 +966,7 @@
 
           <div class="service-card reveal" role="listitem" aria-labelledby="s3Label">
             <div class="service-card-content">
-              <div class="service-icon" aria-hidden="true"><img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Template.png?raw=true" alt="Templates and Families icon" onerror="this.onerror=null; this.src='https://placehold.co/72x72/f0f0f0/999?text=FAM'"></div>
+              <div class="service-icon" aria-hidden="true"><img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Template.png?raw=true" alt="Templates and Families icon"></div>
               <h3 id="s3Label">Template & Families</h3>
               <p>We provide standardized Revit templates and intelligent parametric families that automate your workflow and speed future projects and maintain quality across teams.</p>
             </div>
@@ -1055,7 +988,7 @@
 
           <div class="service-card reveal" role="listitem" aria-labelledby="s4Label">
             <div class="service-card-content">
-                <div class="service-icon" aria-hidden="true"><img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Documentation.png?raw=true" alt="Documentation and Detailing icon" onerror="this.onerror=null; this.src='https://placehold.co/72x72/f0f0f0/999?text=DOC'"></div>
+                <div class="service-icon" aria-hidden="true"><img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Documentation.png?raw=true" alt="Documentation and Detailing icon"></div>
                 <h3 id="s4Label">Documentation & Detailing</h3>
                 <p>We provide contractor-ready drawing sets and schedules extracted from the model, following client or international standards as required.</p>
             </div>
@@ -1077,7 +1010,7 @@
 
           <div class="service-card reveal" role="listitem" aria-labelledby="s5Label">
             <div class="service-card-content">
-                <div class="service-icon" aria-hidden="true"><img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Vizualization.png?raw=true" alt="3D Visualization icon" onerror="this.onerror=null; this.src='https://placehold.co/72x72/f0f0f0/999?text=VIZ'"></div>
+                <div class="service-icon" aria-hidden="true"><img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Vizualization.png?raw=true" alt="3D Visualization icon"></div>
                 <h3 id="s5Label">Visualization</h3>
                 <p>We provide realtime renders and walkthroughs to communicate design decisions clearly to stakeholders and clients.</p>
             </div>
@@ -1099,7 +1032,7 @@
 
           <div class="service-card reveal" role="listitem" aria-labelledby="s6Label">
             <div class="service-card-content">
-              <div class="service-icon" aria-hidden="true"><img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Design.png?raw=true" alt="Architectural Design icon" onerror="this.onerror=null; this.src='https://placehold.co/72x72/f0f0f0/999?text=DESIGN'"></div>
+              <div class="service-icon" aria-hidden="true"><img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Design.png?raw=true" alt="Architectural Design icon"></div>
               <h3 id="s6Label">Architectural Design</h3>
               <p>We blend architectural design expertise with BIM execution from concept to completion. Our process is integrated with modeling and coordination, ensuring every design decision is coordinated, and BIM-compliant.</p>
             </div>
@@ -1134,7 +1067,7 @@
           <div class="process-item reveal">
             <div class="process-left-content">
               <div class="process-icon">
-                <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/01%20Audit.png?raw=true" alt="Project Audit Icon" onerror="this.onerror=null; this.src='https://placehold.co/40x40/f0f0f0/999?text=1'">
+                <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/01%20Audit.png?raw=true" alt="Project Audit Icon">
               </div>
               <div class="process-content">
                 <h4>Project Audit</h4>
@@ -1146,7 +1079,7 @@
           <div class="process-item reveal">
             <div class="process-left-content">
               <div class="process-icon">
-                <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/02%20Approval.png?raw=true" alt="Approval Icon" onerror="this.onerror=null; this.src='https://placehold.co/40x40/f0f0f0/999?text=2'">
+                <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/02%20Approval.png?raw=true" alt="Approval Icon">
               </div>
               <div class="process-content">
                 <h4>Approval</h4>
@@ -1158,7 +1091,7 @@
           <div class="process-item reveal">
             <div class="process-left-content">
               <div class="process-icon">
-                <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/03%20CDE.png?raw=true" alt="Delivery Icon" onerror="this.onerror=null; this.src='https://placehold.co/40x40/f0f0f0/999?text=3'">
+                <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/03%20CDE.png?raw=true" alt="Delivery Icon">
               </div>
               <div class="process-content">
                 <h4>Common Data Enviroment Set Up</h4>
@@ -1170,7 +1103,7 @@
           <div class="process-item reveal">
             <div class="process-left-content">
               <div class="process-icon">
-                <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/04%20Production.png?raw=true" alt="Modeling & Coordination Icon" onerror="this.onerror=null; this.src='https://placehold.co/40x40/f0f0f0/999?text=4'">
+                <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/04%20Production.png?raw=true" alt="Modeling & Coordination Icon">
               </div>
               <div class="process-content">
                 <h4>Production & QA/QC</h4>
@@ -1182,7 +1115,7 @@
           <div class="process-item reveal">
             <div class="process-left-content">
               <div class="process-icon">
-                <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/05%20Handover.png?raw=true" alt="Delivery Icon" onerror="this.onerror=null; this.src='https://placehold.co/40x40/f0f0f0/999?text=5'">
+                <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/05%20Handover.png?raw=true" alt="Delivery Icon">
               </div>
               <div class="process-content">
                 <h4>Handover & Support</h4>
@@ -1198,8 +1131,7 @@
     <section id="projects" class="content-section" aria-labelledby="projectsTitle">
       <div class="container">
         <h2 id="projectsTitle" class="section-title">We Work On</h2>
-        <!-- Used new class section-intro-p -->
-        <p class="section-intro-p">We collaborate across typologies, from residential projects to institutional campuses, bringing BIM discipline and delivery.</p>
+        <p style="color:var(--muted);font-size:15px;margin-bottom:18px;max-width:860px">We collaborate across typologies, from residential projects to institutional campuses, bringing BIM discipline and delivery.</p>
 
         <div class="projects-grid">
           <div class="project-card reveal" role="article">
@@ -1239,7 +1171,7 @@
           
           <div class="value-item reveal">
             <div class="value-icon">
-              <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/01%20Team%20Extension.png?raw=true" alt="Team Extension Icon" onerror="this.onerror=null; this.src='https://placehold.co/40x40/f0f0f0/999?text=E'">
+              <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/01%20Team%20Extension.png?raw=true" alt="Team Extension Icon">
             </div>
             <div class="value-content">
               <h4>Team Extension</h4>
@@ -1249,7 +1181,7 @@
           
           <div class="value-item reveal">
             <div class="value-icon">
-              <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/02%20Transparency.png?raw=true" alt="Transparency Icon" onerror="this.onerror=null; this.src='https://placehold.co/40x40/f0f0f0/999?text=T'">
+              <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/02%20Transparency.png?raw=true" alt="Transparency Icon">
             </div>
             <div class="value-content">
               <h4>Transparency</h4>
@@ -1259,7 +1191,7 @@
           
           <div class="value-item reveal">
             <div class="value-icon">
-              <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/03%20Collaboration.png?raw=true" alt="Collaboration Icon" onerror="this.onerror=null; this.src='https://placehold.co/40x40/f0f0f0/999?text=C'">
+              <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/03%20Collaboration.png?raw=true" alt="Collaboration Icon">
             </div>
             <div class="value-content">
               <h4>Proactive Collaboration</h4>
@@ -1269,7 +1201,8 @@
           
           <div class="value-item reveal">
             <div class="value-icon">
-              <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/04%20Automation.png?raw=true" alt="Automation Icon" onerror="this.onerror=null; this.src='https://placehold.co/40x40/f0f0f0/999?text=A'"></div>
+              <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/04%20Automation.png?raw=true" alt="Automation Icon">
+            </div>
             <div class="value-content">
               <h4>Automated Workflows</h4>
               <p>Automated tasks and quality checks boost efficiency, ensuring accurate, construction-ready design data.</p>
@@ -1387,8 +1320,7 @@
     <section id="contact" class="content-section" aria-labelledby="contactTitle">
       <div class="container">
         <h2 id="contactTitle" class="section-title">Connect</h2>
-        <!-- Used new class section-intro-p with specific max-width -->
-        <p class="section-intro-p" style="max-width:760px;margin-bottom:18px">Tell us about your project—scope, standards, and timeline. We typically reply within 24 hours with a tailored project approach.</p>
+        <p style="color:var(--muted);font-size:15px;max-width:760px;margin-bottom:18px">Tell us about your project—scope, standards, and timeline. We typically reply within 24 hours with a tailored project approach.</p>
 
         <form class="contact-form" action="https://formsubmit.co/a85eab003ddc941a1ff01bddcd2e16d9" method="POST" aria-label="Contact form">
           <input type="hidden" name="_subject" value="BIM Service Request">
@@ -1455,12 +1387,12 @@
         </div>
           <div class="footer-nav-col">
             <h4>Our Services</h4>
-            <a href="#services">Building Information Modeling</a>
-            <a href="#services">Clash Coordination</a>
-            <a href="#services">Template &amp; Families</a>
-            <a href="#services">Documentation</a>
-            <a href="#services">Visualization</a>
-            <a href="#services">Architectural Design</a>
+            <a href="building-information-modeling/">Building Information Modeling</a>
+            <a href="#s2Label">Clash Coordination</a>
+            <a href="#s3Label">Template &amp; Families</a>
+            <a href="#s4Label">Documentation</a>
+            <a href="#s5Label">Visualization</a>
+            <a href="#s6Label">Architectural Design</a>
           </div>
         </div>
       </div>
@@ -1479,7 +1411,7 @@
       
       /**
        * ------------------------------------------------------------------------
-       * 1. Mobile Navigation Toggle & Dropdown Logic
+       * 1. Mobile Navigation Toggle
        * ------------------------------------------------------------------------
        */
       const menuToggle = document.querySelector('.menu-toggle');
@@ -1490,50 +1422,8 @@
           const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
           menuToggle.setAttribute('aria-expanded', !isExpanded);
           document.body.classList.toggle('nav-open');
-          
-          // Close all dropdowns when the main menu is toggled shut
-          if (document.body.classList.contains('nav-open')) {
-            // Do nothing, let the main nav open
-          } else {
-            document.querySelectorAll('.nav-item-has-dropdown.dropdown-open').forEach(container => {
-                container.classList.remove('dropdown-open');
-                container.querySelector('.nav-link').setAttribute('aria-expanded', 'false');
-            });
-          }
         });
       }
-
-      const dropdownToggles = document.querySelectorAll('.nav-item-has-dropdown > .nav-link');
-
-      dropdownToggles.forEach(toggle => {
-          const container = toggle.parentElement;
-
-          toggle.addEventListener('click', (e) => {
-              const isMobile = window.innerWidth <= 880;
-              
-              // Only prevent default navigation if we are managing the dropdown state (desktop or mobile dropdown toggle)
-              if (!isMobile || (isMobile && e.currentTarget.getAttribute('href') === '#services')) {
-                  e.preventDefault();
-              }
-
-              const wasOpen = container.classList.contains('dropdown-open');
-
-              // Close all *other* open dropdowns (only really relevant for desktop)
-              document.querySelectorAll('.nav-item-has-dropdown.dropdown-open').forEach(openContainer => {
-                  if (openContainer !== container) {
-                      openContainer.classList.remove('dropdown-open');
-                      openContainer.querySelector('.nav-link').setAttribute('aria-expanded', 'false');
-                  }
-              });
-              
-              // Toggle the current dropdown state if it was clicked
-              if (!isMobile || isMobile) { // Toggle on all screen sizes now
-                  container.classList.toggle('dropdown-open', !wasOpen);
-                  toggle.setAttribute('aria-expanded', !wasOpen);
-              }
-          });
-      });
-
 
       /**
        * ------------------------------------------------------------------------
@@ -1549,27 +1439,15 @@
 
         const targetElement = document.querySelector(href);
         if (targetElement) {
-          // Check if the click originated from a link inside the mobile nav, and it's an actual anchor link (not just the main service toggle)
-          const isMobileNavLink = document.body.classList.contains('nav-open') && href !== '#services';
+          event.preventDefault();
           
-          if (isMobileNavLink) {
-              // Close mobile nav after clicking an inner link
+          if (document.body.classList.contains('nav-open')) {
               document.body.classList.remove('nav-open');
               menuToggle.setAttribute('aria-expanded', 'false');
           }
 
-          event.preventDefault();
-          
           const headerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height'), 10) || 86;
-          // Standard offset applied for sections below the hero
-          let offset = headerHeight + 10; 
-
-          // Special case for the hero/main section
-          if (href === '#main') {
-              offset = 0;
-          }
-          
-          const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - offset;
+          const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight - 10;
           
           window.scrollTo({
             top: targetPosition,
@@ -1614,9 +1492,6 @@
         const allSlides = carousel.querySelectorAll('.carousel-slide');
         const slideCount = allSlides.length;
         let currentIndex = 0;
-        
-        // Make carousel container focusable
-        carousel.setAttribute('tabindex', '0');
 
         function updateAria() {
             allSlides.forEach((slide, i) => {
@@ -1637,23 +1512,12 @@
           updateAria();
         }
 
-        const handleNext = () => showSlide(currentIndex + 1);
-        const handlePrev = () => showSlide(currentIndex - 1);
+        nextBtn.addEventListener('click', () => {
+          showSlide(currentIndex + 1);
+        });
 
-        nextBtn.addEventListener('click', handleNext);
-        prevBtn.addEventListener('click', handlePrev);
-        
-        // Add keyboard support to the carousel container itself
-        carousel.addEventListener('keydown', (e) => {
-          if (document.activeElement === nextBtn || document.activeElement === prevBtn || document.activeElement === carousel) {
-            if (e.key === 'ArrowRight') {
-              e.preventDefault();
-              handleNext();
-            } else if (e.key === 'ArrowLeft') {
-              e.preventDefault();
-              handlePrev();
-            }
-          }
+        prevBtn.addEventListener('click', () => {
+          showSlide(currentIndex - 1);
         });
 
         // Initialize
@@ -1669,7 +1533,29 @@
        if(yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
        }
+
+      /**
+       * ------------------------------------------------------------------------
+       * 6. Dropdown Menu Logic
+       * ------------------------------------------------------------------------
+       */
+      const dropdownToggles = document.querySelectorAll('.nav-item-has-dropdown > .nav-link');
+
+      dropdownToggles.forEach(toggle => {
+          const container = toggle.parentElement;
+          toggle.addEventListener('click', (e) => {
+              // On mobile, the main link should navigate. Let the hamburger handle the sub-menu.
+              if (window.innerWidth < 880) {
+                  return;
+              }
+              e.preventDefault();
+              const isExpanded = container.classList.toggle('dropdown-open');
+              toggle.setAttribute('aria-expanded', isExpanded);
+          });
+      });
     });
   </script>
 </body>
 </html>
+
+
