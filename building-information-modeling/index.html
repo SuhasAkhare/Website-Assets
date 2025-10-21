@@ -466,13 +466,12 @@
     /* --- LOD PROGRESSION STYLES --- */
 
 .lod-progress-section {
-    background-color: var(--bg); /* Use your existing background color */
+    background-color: var(--bg);
     padding-bottom: 50px;
 }
 
 .lod-progress-grid {
     display: grid;
-    /* 3 columns on desktop, 1 column on mobile */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
     gap: 20px;
     margin-top: 30px;
@@ -488,26 +487,23 @@
     min-height: 180px; /* Ensures visual consistency */
     position: relative;
     box-shadow: var(--shadow-light);
+    overflow: hidden; /* Crucial for overlay animation */
     transition: all 0.3s ease;
-}
-
-.lod-block:hover {
-    background-color: #ffffff;
-    border-color: var(--accent);
-    transform: translateY(-3px);
 }
 
 .lod-block h4 {
     font-family: 'Raleway', sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     color: var(--text);
     margin-bottom: 10px;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* For text fading */
 }
 
 .lod-block p {
     font-size: 13px;
     color: var(--muted);
+    transition: opacity 0.3s ease, transform 0.3s ease; /* For text fading */
 }
 
 .lod-level-tag {
@@ -522,21 +518,99 @@
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 1px;
+    z-index: 1; /* Keep tag above overlay */
 }
 
-/* Optional: Color coding for the progression */
-.lod-block:nth-child(1) .lod-level-tag { background-color: #4CAF50; } /* Concept */
-.lod-block:nth-child(2) .lod-level-tag { background-color: #2196F3; } /* Schematic */
-.lod-block:nth-child(3) .lod-level-tag { background-color: #FFC107; } /* Detailed */
-.lod-block:nth-child(4) .lod-level-tag { background-color: #FF5722; } /* Coordination */
-.lod-block:nth-child(5) .lod-level-tag { background-color: #9C27B0; } /* Fabrication */
-.lod-block:nth-child(6) .lod-level-tag { background-color: #000000; } /* As-Built */
+.lod-level-tag-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #000000;
+    border: 1px solid #000000;
+    padding: 6px 12px;
+    border-bottom-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1; /* Keep tag above overlay */
+}
+.overlay-heading {
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px; 
+    font-weight: 600;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+/* --- NEW: Actionable Overlay Styles --- */
+.lod-action-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent); /* Dark background for the overlay */
+    border: 1px solid #e6e6e6;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transform: translateY(100%); /* Start completely below the block */
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.25, 1), opacity 0.4s ease;
+    border-radius: var(--radius); /* Match block radius */
+    z-index: 1; /* Keep it below the tag initially if needed */
+}
+
+.lod-action-overlay span {
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    max-width: 90%; /* Ensure text wraps nicely */
+}
+
+/* --- Hover Effects for .lod-block --- */
+.lod-block:hover .lod-action-overlay {
+    transform: translateY(0); /* Slide up to fully visible */
+    opacity: 1;
+    z-index: 1; /* Bring overlay to front on hover */
+}
+
+.lod-block:hover h4,
+.lod-block:hover p {
+    opacity: 0; /* Fade out existing text */
+    transform: translateY(-10px); /* Move existing text up slightly */
+}
+
+/* Optional: Color coding for the progression tags */
+.lod-block:nth-child(1) .lod-level-tag { background-color: #000000; }
+.lod-block:nth-child(2) .lod-level-tag { background-color: #000000; }
+.lod-block:nth-child(3) .lod-level-tag { background-color: #000000; }
+.lod-block:nth-child(4) .lod-level-tag { background-color: #000000; }
+.lod-block:nth-child(5) .lod-level-tag { background-color: #000000; }
+.lod-block:nth-child(6) .lod-level-tag { background-color: #000000; }
+
+/* Optional: Color coding for the progression tags */
+.lod-block:nth-child(1) .lod-level-tag-overlay { background-color: #ffffff; }
+.lod-block:nth-child(2) .lod-level-tag-overlay { background-color: #ffffff; }
+.lod-block:nth-child(3) .lod-level-tag-overlay { background-color: #ffffff; }
+.lod-block:nth-child(4) .lod-level-tag-overlay { background-color: #ffffff; }
+.lod-block:nth-child(5) .lod-level-tag-overlay { background-color: #ffffff; }
+.lod-block:nth-child(6) .lod-level-tag-overlay { background-color: #ffffff; }
 
 /* Mobile adjustment for smaller screens */
 @media (max-width: 600px) {
     .lod-progress-grid {
         grid-template-columns: 1fr;
     }
+}
 }
 
     /* -- The Value We Deliver Section -- */
@@ -1029,43 +1103,73 @@
             <div class="lod-block">
                 <div class="lod-level-tag">LOD 100</div>
                 <h4>Conceptual Design</h4>
-                <p>Represents overall massing and conceptual data. Used for initial budgeting and volume studies.</p>
+                <p>Represents overall **massing and volume**. Initial budgeting and volume studies.</p>
+                <div class="lod-action-overlay">
+                    <div class="lod-level-tag-overlay">LOD 100</div>
+                    <h5 class="overlay-heading">Data Usage</h5>
+                    <span>**Reliable For:** Initial budgeting, site planning, and feasibility studies.</span>
+                </div>
             </div>
             
             <div class="lod-block">
                 <div class="lod-level-tag">LOD 200</div>
                 <h4>Approximate Geometry</h4>
-                <p>Elements modeled as generic systems with approximate size and location. Used for preliminary clash detection.</p>
+                <p>Elements are generic systems with approximate size and location. Preliminary clash detection.</p>
+                <div class="lod-action-overlay">
+                    <div class="lod-level-tag-overlay">LOD 200</div>
+                    <h5 class="overlay-heading">Data Usage</h5>
+                    <span>**Reliable For:** Preliminary clash detection and early energy analysis.</span>
+                </div>
             </div>
             
             <div class="lod-block">
                 <div class="lod-level-tag">LOD 300</div>
                 <h4>Precise Geometry</h4>
-                <p>Elements modeled as specific objects with accurate size and location. Ready for detailed **Construction Documents**.</p>
+                <p>Elements modeled as specific, accurate objects. Generates accurate QTO and **Construction Documents**.</p>
+                <div class="lod-action-overlay">
+                    <div class="lod-level-tag-overlay">LOD 300</div>
+                    <h5 class="overlay-heading">Data Usage</h5>
+                    <span>**Reliable For:** Generating accurate **Quantity Take-Offs (QTO)** and creating Construction Documents.</span>
+                </div>
             </div>
             
             <div class="lod-block">
                 <div class="lod-level-tag">LOD 350</div>
                 <h4>Coordination Interface</h4>
-                <p>Includes detailing of connections and interfaces necessary for **multi-discipline coordination** and assembly.</p>
+                <p>Includes detailing of connections and interfaces. Crucial for **multi-discipline coordination** and minimizing RFIs.</p>
+                <div class="lod-action-overlay">
+                    <div class="lod-level-tag-overlay">LOD 350</div>
+                    <h5 class="overlay-heading">Data Usage</h5>
+                    <span>**Crucial For:** Identifying and resolving system clashes (MEPF/Structural) and minimizing **Requests for Information (RFIs)**.</span>
+                </div>
             </div>
             
             <div class="lod-block">
                 <div class="lod-level-tag">LOD 400</div>
                 <h4>Fabrication Ready</h4>
-                <p>Elements modeled as complete assemblies with full installation and shop drawing information.</p>
+                <p>Elements modeled as complete assemblies with full installation & shop drawing info. **Reliable for:** Off-site pre-fabrication.</p>
+                <div class="lod-action-overlay">
+                    <div class="lod-level-tag-overlay">LOD 400</div>
+                    <h5 class="overlay-heading">Data Usage</h5>
+                    <span>**Reliable For:** Off-site pre-fabrication and direct use in construction and installation planning.</span>
+                </div>
             </div>
             
             <div class="lod-block">
                 <div class="lod-level-tag">LOD 500</div>
                 <h4>As-Built & FM</h4>
-                <p>Field-verified model reflecting final constructed conditions. Ready for **Facility Management** operations.</p>
+                <p>**Field-verified model** reflecting final constructed conditions. End Use: **Facility Management (FM)** and long-term maintenance planning.</p>
+                <div class="lod-action-overlay">
+                    <div class="lod-level-tag-overlay">LOD 500</div>
+                    <h5 class="overlay-heading">Data Usage</h5>
+                    <span>**End Use:** Facility Management (FM), maintenance planning, and creating a verifiable digital twin.</span>
+                </div>
             </div>
             
         </div>
     </div>
     </section>
-
+    
     <section id="process" class="content-section" aria-labelledby="processTitle">
       <div class="container">
         <h2 id="processTitle" class="section-title">Process</h2>
