@@ -552,11 +552,11 @@
     width: 100%;
     height: 100%;
     background-color: var(--accent); /* Dark background for the overlay */
-    border: 1px solid #e6e6e6;
+    border: 1px solid #000000;
     color: #fff;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     text-align: center;
     padding: 20px;
@@ -1103,66 +1103,77 @@
             <div class="lod-block">
                 <div class="lod-level-tag">LOD 100</div>
                 <h4>Conceptual Design</h4>
-                <p>Represents overall **massing and volume**. Initial budgeting and volume studies.</p>
+                <p>Represented by a generic symbol or mass. It's a placeholder to show existence but not specific shape, size, or location.</p>
                 <div class="lod-action-overlay">
                     <div class="lod-level-tag-overlay">LOD 100</div>
                     <h5 class="overlay-heading">Data Usage</h5>
-                    <span>**Reliable For:** Initial budgeting, site planning, and feasibility studies.</span>
+                    <span>•Conceptual design.</span>
+                    <span>•Massing studies.</span>
+                    <span>•Overall project phasing.</span>
                 </div>
             </div>
             
             <div class="lod-block">
                 <div class="lod-level-tag">LOD 200</div>
                 <h4>Approximate Geometry</h4>
-                <p>Elements are generic systems with approximate size and location. Preliminary clash detection.</p>
+                <p>Elements are modeled as a generic object or assembly with approximate size, shape, location, and orientation.</p>
                 <div class="lod-action-overlay">
                     <div class="lod-level-tag-overlay">LOD 200</div>
                     <h5 class="overlay-heading">Data Usage</h5>
-                    <span>**Reliable For:** Preliminary clash detection and early energy analysis.</span>
+                    <span>•Schematic design.</span>
+                    <span>•Approximate cost estimation.</span>
+                    <span>•Overall system layout.</span>
                 </div>
             </div>
             
             <div class="lod-block">
                 <div class="lod-level-tag">LOD 300</div>
                 <h4>Precise Geometry</h4>
-                <p>Elements modeled as specific, accurate objects. Generates accurate QTO and **Construction Documents**.</p>
+                <p>Elements modeled as a specific system or assembly with accurate quantity, size, shape, location, and orientation.</p>
                 <div class="lod-action-overlay">
                     <div class="lod-level-tag-overlay">LOD 300</div>
                     <h5 class="overlay-heading">Data Usage</h5>
-                    <span>**Reliable For:** Generating accurate **Quantity Take-Offs (QTO)** and creating Construction Documents.</span>
+                    <span>•Detailed design.</span>
+                    <span>•Construction documents.</span>
+                    <span>•Traditional coordination.</span>
                 </div>
             </div>
             
             <div class="lod-block">
                 <div class="lod-level-tag">LOD 350</div>
                 <h4>Coordination Interface</h4>
-                <p>Includes detailing of connections and interfaces. Crucial for **multi-discipline coordination** and minimizing RFIs.</p>
+                <p>Includes the same detail as LOD 300 but also models the element's interfaces, connections, and relationships with other building systems.</p>
                 <div class="lod-action-overlay">
                     <div class="lod-level-tag-overlay">LOD 350</div>
                     <h5 class="overlay-heading">Data Usage</h5>
-                    <span>**Crucial For:** Identifying and resolving system clashes (MEPF/Structural) and minimizing **Requests for Information (RFIs)**.</span>
+                    <span>•Clash detection and coordination.</span>
+                    <span>•Construction documents.</span>
                 </div>
             </div>
             
             <div class="lod-block">
                 <div class="lod-level-tag">LOD 400</div>
                 <h4>Fabrication Ready</h4>
-                <p>Elements modeled as complete assemblies with full installation & shop drawing info. **Reliable for:** Off-site pre-fabrication.</p>
+                <p>The model element is detailed to a level sufficient for fabrication, assembly, and installation which includes specific part numbers, manufacturer details, and installation instructions.</p>
                 <div class="lod-action-overlay">
                     <div class="lod-level-tag-overlay">LOD 400</div>
                     <h5 class="overlay-heading">Data Usage</h5>
-                    <span>**Reliable For:** Off-site pre-fabrication and direct use in construction and installation planning.</span>
+                    <span>•Fabrication.</span>
+                    <span>•Shop drawings.</span>
+                    <span>•Pre-assembly.</span>
                 </div>
             </div>
             
             <div class="lod-block">
                 <div class="lod-level-tag">LOD 500</div>
                 <h4>As-Built & FM</h4>
-                <p>**Field-verified model** reflecting final constructed conditions. End Use: **Facility Management (FM)** and long-term maintenance planning.</p>
+                <p>he model element is a field-verified representation of the project as it was actually built. It reflects the final, installed size, shape, location, quantity, and orientation.</p>
                 <div class="lod-action-overlay">
                     <div class="lod-level-tag-overlay">LOD 500</div>
                     <h5 class="overlay-heading">Data Usage</h5>
-                    <span>**End Use:** Facility Management (FM), maintenance planning, and creating a verifiable digital twin.</span>
+                    <span>•Operations.</span>
+                    <span>•Maintenance.</span>
+                    <span>•Facility management (FM).</span>
                 </div>
             </div>
             
