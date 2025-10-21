@@ -3,17 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Aarya Architects</title>
-  <meta name="description" content="Aarya Architects — BIM-focused studio providing Revit modeling, clash coordination, parametric families, and visualization. Focus on design, we handle the delivery." />
-  <meta name="keywords" content="BIM services, Revit modeling, clash coordination, BIM management, LOD 100-500, parametric families" />
+  <title>Building Information Modeling — Aarya Architects</title>
+  <meta name="description" content="Detailed overview of our Building Information Modeling (BIM) services, from LOD 100 to 500, including Scan-to-BIM and As-Built modeling." />
+  <meta name="keywords" content="BIM services, Revit modeling, LOD 100-500, Scan to BIM, As-Built models, Architectural modeling, Structural modeling, MEP modeling" />
   <meta name="theme-color" content="#ffffff" />
 
   <meta property="og:site_name" content="Aarya Architects" />
-  <meta property="og:title" content="Aarya Architects — BIM Services" />
-  <meta property="og:description" content="BIM-focused studio providing Revit modeling, coordination, documentation, and visualization services so designers can focus on design." />
-  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Building Information Modeling Services — Aarya Architects" />
+  <meta property="og:description" content="Explore our comprehensive BIM services, designed to enhance project coordination, reduce risk, and streamline delivery from concept to completion." /><meta property="og:type" content="website" />
   <meta property="og:image" content="https://github.com/SuhasAkhare/Website-Assets/blob/main/Aarya%20Architects%20Logo%20-%20Circular.png?raw=true" />
-  <meta property="og:url" content="https://aaryaarchitects.com" />
+  <meta property="og:url" content="https://aaryaarchitects.com/service-buildinginformationmodeling.html" />
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Raleway:wght@300;600&display=swap" rel="stylesheet">
@@ -56,7 +55,7 @@
     }
     html {
     font-size: 100%;}
-    
+
     /* Basic reset */
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -103,8 +102,9 @@
       letter-spacing:4px;
       text-transform:uppercase;
       font-size:15px;
-      margin:0 0 26px 0;
+      margin:25px 0 25px 0;
       color:var(--text);
+      
     }
 
     /* Header */
@@ -186,7 +186,7 @@
       position: relative; /* Added for positioning */
     }
     .hero-inner{max-width:920px}
-    .hero-eyebrow{font-family:'Montserrat',sans-serif;text-transform:uppercase;letter-spacing:3px;font-size:14px;color:var(--muted);margin-bottom:18px}
+    .hero-eyebrow{font-family:'Montserrat',sans-serif;text-transform:uppercase;letter-spacing:3px;font-size:12px;color:var(--muted);margin-bottom:18px}
     .hero-heading{
       font-family:'Raleway',sans-serif;
       font-weight:600;
@@ -284,11 +284,6 @@
       transition: transform 0.3s cubic-bezier(.2,.9,.25,1), box-shadow 0.3s cubic-bezier(.2,.9,.25,1);
     }
 
-    .service-card:hover {
-      transform: scale(1.04) translateY(-8px);
-      box-shadow: var(--shadow-soft);
-    }
-
     .service-card-content {
       transition: opacity 0.4s ease, transform 0.4s ease;
     }
@@ -305,16 +300,6 @@
       transition: opacity 0.4s ease, transform 0.4s ease;
       display: flex;
       flex-direction: column;
-    }
-
-    .service-card:hover .service-card-content {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-
-    .service-card:hover .service-card-details {
-      opacity: 1;
-      transform: translateY(0);
     }
 
     .service-icon{
@@ -439,7 +424,7 @@
       margin-top: 32px;
     }
     .process-item {
-      display: flex ; gap: 10px; padding: 20px 0; border-bottom: 1px solid #f0f0f0; flex-direction: row; justify-content: space-between; align-items: center;
+      display: flex ; gap: 20px; padding: 20px 0; border-bottom: 1px solid #f0f0f0; flex-direction: row; justify-content: space-between; align-items: center;
     }
     .process-item:first-child {
       border-top: 1px solid #f0f0f0;
@@ -537,11 +522,11 @@
     /* Projects grid */
     .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;justify-content: center;align-content: center;}
     .project-card{background:#fff;border-radius:18px;padding:18px;border:1px solid #f0f0f0;text-align:center;box-shadow:var(--shadow-light);transition:transform .18s}
-    .project-card h4{font-family:'Raleway',sans-serif;font-size:14px;margin:5px;letter-spacing:1px}
+    .project-card h4{font-family:'Raleway',sans-serif;font-size:14px;margin:10px;text-transform:uppercase;letter-spacing:1px}
 
     /* About */
     .about-content{display:column;gap:36px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-    .about-text{flex:1;min-width:260px;font-size:14px;}
+    .about-text{flex:1;min-width:260px;font-size:14px}
     .about-images-group{display: flex;padding:10px;gap:50px;align-items: center;flex-wrap: nowrap;flex-direction: row;justify-content: center;}
     .about-person-card{text-align:center;min-width:160px}
     .about-image{width:140px;height:140px;border-radius:50%;overflow:hidden;margin:0 auto 10px;box-shadow:var(--shadow-light)}
@@ -864,7 +849,7 @@
   <a class="skip-to-content" href="#main">Skip to content</a>
 
   <header class="header" role="banner">
-      <a href="#main" class="logo-group" aria-label="Aarya Architects home">
+      <a href="../index.html" class="logo-group" aria-label="Aarya Architects home">
         <div class="logo-container" aria-hidden="true">
           <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Aarya%20Architects%20Logo%20-%20Circular.png?raw=true" alt="Aarya Architects logo">
         </div>
@@ -887,9 +872,9 @@
                 <a href="#service-design" class="dropdown-item">Architectural Design</a>
             </div>
           </div>
-          <a href="#about" class="nav-link">About</a>
-          <a href="#gallery" class="nav-link">Gallery</a>
-          <a href="#contact" class="cta-ghost">Connect</a>
+          <a href="../#about" class="nav-link">About</a>
+          <a href="../#gallery" class="nav-link">Gallery</a>
+          <a href="../#contact" class="cta-ghost">Connect</a>
         </nav>
 
         <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
@@ -901,10 +886,10 @@
   <main id="main" role="main">
     <section class="hero-section" aria-label="Introduction">
       <div class="hero-inner container">
-        <div class="hero-eyebrow">Building Information Modeling</div>
-        <h1 class="hero-heading">You focus on design. We handle the Delivery.</h1>
-        <p class="hero-sub">We provide precision Revit Modeling, detailed Clash Resolution, custom Parametric Families, and construction-ready Documentation to guarantee your team an absolutely friction-free workflow.</p>
-        <div class="hero-actions"style="margin-top:50px;font-size:15px;text-align:center">
+        <div class="hero-eyebrow">Our Core Service</div>
+        <h1 class="hero-heading">Building Information Modeling (BIM).</h1>
+        <p class="hero-sub">We transform your designs into data-rich, intelligent 3D models that streamline coordination, reduce risk, and ensure project-wide clarity from concept to completion.</p>
+        <div class="hero-actions">
           <a class="cta-primary" href="#contact">Discuss Your Project</a>
         </div>
       </div>
@@ -917,156 +902,57 @@
 
     <section id="services" class="content-section">
       <div class="container">
-        <h2 class="section-title">The BIM Services You Need</h2>
-        <p style="color:var(--muted);font-size:15px;margin-bottom:15px;max-width:860px">BIM support. We integrate seamlessly as your dedicated remote BIM team, ensuring your models are perfectly managed, coordinated, and construction-ready.</p>
-
-        <div class="services-grid" role="list">
+        <p style="font-size:15px;margin-bottom:15px;max-width:1150px">With inaccurate 2D plans, how can you ensure your final documentation is fully coordinated and guarantees construction certainty?</p>
+        <p style="font-size:15px;margin-bottom:15px;max-width:1150px">We ensure your final documentation is fully coordinated and guarantees construction certainty by shifting the source of truth from fallible 2D drawings to a validated, centralized 3D model.</p>
+        <h2 class="section-title">Our BIM Services.</h2>
+      <div class="services-grid" role="list">
 
           <div class="service-card reveal" role="listitem" aria-labelledby="s1Label">
             <div class="service-card-content">
               <div class="service-icon" aria-hidden="true"><img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/3D%20Modelling.png?raw=true" alt="Building Information Modeling icon"></div>
-              <h3 id="s1Label">Building Information Modeling</h3>
-              <p>We provide detailed BIM models upto LOD 500 across Architecture, Structure, MEP, and Firefighting disciplines with parametric families for seamless, build-ready integration.</p>
-            </div>
-            <div class="service-card-details">
-              <h3>Building Information Modeling — Deliverables</h3>
-              <ul class="deliverables">
-                <li>• BIM Model (LOD 100–500)</li>
-                <li>• Fabrication-Ready Model / As-Built Model</li>
-                <li>• Scan to BIM</li>
-              </ul>
-              <div class="small-note">Tools : Autodesk Revit • Autodesk Construction Cloud </div>
-              <div class="card-actions">
-                  <a href="building-information-modeling/" rel="noopener noreferrer" class="card-cta-secondary">
-                    Learn More
-                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                    </a>
-              </div>
+              <h3 id="s1Label">Architectural BIM</h3>
+              <p>From conceptual massing to detailed construction models, we model all architectural elements, including walls, doors, windows, and finishes with precision.</p>
             </div>
           </div>
 
           <div class="service-card reveal" role="listitem" aria-labelledby="s2Label">
             <div class="service-card-content">
               <div class="service-icon" aria-hidden="true"><img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Clash%20Coordination.png?raw=true" alt="Clash Coordination icon"></div>
-              <h3 id="s2Label">Clash Coordination</h3>
-              <p>We provide detailed Clash Reports and full Clash Resolutions with centralized issue tracking across all MEPF, Architecture, and Structure disciplines.</p>
-            </div>
-            <div class="service-card-details">
-              <h3>Clash Coordination — Deliverables</h3>
-              <ul class="deliverables">
-                <li>• NWF/NWD models</li>
-                <li>• Detailed Clash Reports</li>
-                <li>• Resolved Multi-Discipline Model</li>
-              </ul>
-              <div class="small-note">Tools :Autodesk Revvit • Naviswork Manage • ACC Model Coordination</div>
-              <div class="card-actions">
-                  <a href="bim-details.html" rel="noopener noreferrer" class="card-cta-secondary">
-                    Learn More
-                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                  </a>
-              </div>
+              <h3 id="s2Label">Structural BIM</h3>
+              <p>We create detailed structural models including foundations, framing, rebar, and connections ready for analysis and fabrication.</p>
             </div>
           </div>
 
           <div class="service-card reveal" role="listitem" aria-labelledby="s3Label">
             <div class="service-card-content">
               <div class="service-icon" aria-hidden="true"><img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Template.png?raw=true" alt="Templates and Families icon"></div>
-              <h3 id="s3Label">Template & Families</h3>
-              <p>We provide standardized Revit templates and intelligent parametric families that automate your workflow and speed future projects and maintain quality across teams.</p>
-            </div>
-            <div class="service-card-details">
-              <h3>Templates & Families — Deliverables</h3>
-              <ul class="deliverables">
-                <li>• Revit families (.rfa)</li>
-                <li>• Project template (.rte)</li>
-              </ul>
-              <div class="small-note">Tools : Autodesk Revit</div>
-              <div class="card-actions">
-                  <a href="bim-details.html" rel="noopener noreferrer" class="card-cta-secondary">
-                    Learn More
-                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                  </a>
-              </div>
+              <h3 id="s3Label">MEPF BIM</h3>
+              <p>We develop coordinated models for Mechanical, Electrical, Plumbing, and Firefighting systems for seamless integration and clash avoidance.</p>
             </div>
           </div>
 
           <div class="service-card reveal" role="listitem" aria-labelledby="s4Label">
             <div class="service-card-content">
                 <div class="service-icon" aria-hidden="true"><img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Documentation.png?raw=true" alt="Documentation and Detailing icon"></div>
-                <h3 id="s4Label">Documentation & Detailing</h3>
-                <p>We provide contractor-ready drawing sets and schedules extracted from the model, following client or international standards as required.</p>
-            </div>
-            <div class="service-card-details">
-                <h3>Documentation & Detailing — Deliverables</h3>
-                <ul class="deliverables">
-                    <li>• SD, DD, CD sets (PDF/DWG)</li>
-                    <li>• Schedules and BOM/BOQ exports</li>
-                </ul>
-                <div class="small-note">Tools : Autodesk Revit • AutoCAD • Bluebeam • Autodesk Construction Cloud</div>
-                <div class="card-actions">
-                  <a href="bim-details.html" rel="noopener noreferrer" class="card-cta-secondary">
-                    Learn More
-                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                  </a>
-                </div>
+                <h3 id="s4Label">Scan to BIM</h3>
+                <p>For renovation and retrofit projects, we accurately convert point cloud data from laser scans into intelligent, as-is condition Revit models.</p>
             </div>
           </div>
 
           <div class="service-card reveal" role="listitem" aria-labelledby="s5Label">
             <div class="service-card-content">
                 <div class="service-icon" aria-hidden="true"><img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Vizualization.png?raw=true" alt="3D Visualization icon"></div>
-                <h3 id="s5Label">Visualization</h3>
-                <p>We provide realtime renders and walkthroughs to communicate design decisions clearly to stakeholders and clients.</p>
-            </div>
-            <div class="service-card-details">
-                <h3>Visualization — Deliverables</h3>
-                <ul class="deliverables">
-                    <li>• Still rendered (JPG/PNG) views</li>
-                    <li>• Short walkthrough video</li>
-                </ul>
-                <div class="small-note">Autodesk Revit • SketchUp • Vray • Twinmotion</div>
-                <div class="card-actions">
-                  <a href="bim-details.html" rel="noopener noreferrer" class="card-cta-secondary">
-                    Learn More
-                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                  </a>
-                </div>
+                <h3 id="s5Label">As-Built Modeling</h3>
+                <p>Post-construction, we update the model to reflect final built conditions and changes, creating a valuable digital asset for facility management.</p>
             </div>
           </div>
-
-          <div class="service-card reveal" role="listitem" aria-labelledby="s6Label">
-            <div class="service-card-content">
-              <div class="service-icon" aria-hidden="true"><img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Design.png?raw=true" alt="Architectural Design icon"></div>
-              <h3 id="s6Label">Architectural Design</h3>
-              <p>We blend architectural design expertise with BIM execution from concept to completion. Our process is integrated with modeling and coordination, ensuring every design decision is coordinated, and BIM-compliant.</p>
-            </div>
-            <div class="service-card-details">
-              <h3>Architectural Design — Deliverables</h3>
-              <ul class="deliverables">
-                <li>• Conceptual design</li>
-                <li>• SD, DD, CD packages</li>
-                <li>• BIM-Integrated Model</li>
-              </ul>
-              <div class="small-note">Autodesk Construction Cloud • Autodesk Revit • AutoCAD</div>
-              <div class="card-actions">
-                  <a href="bim-details.html" rel="noopener noreferrer" class="card-cta-secondary">
-                    Learn More
-                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                  </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div style="margin-top:50px;font-size:15px;text-align:center">
-          <a class="cta-primary" href="#contact">Discuss Our Services</a>
         </div>
       </div>
     </section>
 
     <section id="process" class="content-section" aria-labelledby="processTitle">
       <div class="container">
-        <h2 id="processTitle" class="section-title">Our Working Process</h2>
+        <h2 id="processTitle" class="section-title">Process</h2>
         <div class="process-list">
           <div class="process-item reveal">
             <div class="process-left-content">
@@ -1074,8 +960,8 @@
                 <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/01%20Audit.png?raw=true" alt="Project Audit Icon">
               </div>
               <div class="process-content">
-                <h4>Project Audit</h4>
-                <p>We review your drawings and project scope to provide a clear budget, timeline, and execution plan.	</p>
+                <h4>Project Onboarding</h4>
+                <p>We receive and analyze your 2D drawings and technical documentation to define project scope.	</p>
               </div>
             </div>
             <div class="process-number">01</div>
@@ -1086,8 +972,8 @@
                 <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/02%20Approval.png?raw=true" alt="Approval Icon">
               </div>
               <div class="process-content">
-                <h4>Approval</h4>
-                <p>After approval, Our dedicated team starts immediately.</p>
+                <h4>3D Modeling:</h4>
+                <p>Your flat drawings are instantly transformed into an accurate Revit model, creating the central database.</p>
               </div>
             </div>
             <div class="process-number">02</div>
@@ -1098,8 +984,8 @@
                 <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/03%20CDE.png?raw=true" alt="Delivery Icon">
               </div>
               <div class="process-content">
-                <h4>Common Data Enviroment Set Up</h4>
-                <p> We set up a (CDE)Common Data Environment (Google Workspace/ACC) for seamless workflow, file transparency, and collaboration. </p>
+                <h4>Model Build & Detail:</h4>
+                <p>We digitize all systems (MEP, structural, etc.) and enrich the model with intelligent Revit families.</p>
               </div>
             </div>
             <div class="process-number">03</div>
@@ -1110,8 +996,8 @@
                 <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/04%20Production.png?raw=true" alt="Modeling & Coordination Icon">
               </div>
               <div class="process-content">
-                <h4>Production & QA/QC</h4>
-                <p>We conduct the modeling, coordination, and documentation process with final QA/QC.</p>
+                <h4>Clash Coordination</h4>
+                <p>Our team runs automated clash detection to flag and resolve all design conflicts.</p>
               </div>
             </div>
             <div class="process-number">04</div>
@@ -1122,8 +1008,8 @@
                 <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/05%20Handover.png?raw=true" alt="Delivery Icon">
               </div>
               <div class="process-content">
-                <h4>Handover & Support</h4>
-                <p> handover packages and provide support until project completion.</p>
+                <h4>Final Handover</h4>
+                <p> You receive interactive 3D models and shop drawings for maximum construction productivity.</p>
               </div>
             </div>
             <div class="process-number">05</div>
@@ -1131,118 +1017,7 @@
         </div>
       </div>
     </section>
-
-    <section id="projects" class="content-section" aria-labelledby="projectsTitle">
-      <div class="container">
-        <h2 id="projectsTitle" class="section-title">We Work On</h2>
-        <p style="color:var(--muted);font-size:1rem;margin-bottom:18px;max-width:860px">We collaborate across typologies, from residential projects to institutional campuses, bringing BIM discipline and delivery.</p>
-
-        <div class="projects-grid">
-          <div class="project-card reveal" role="article">
-            <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Icon%20Residential.png?raw=true" alt="Residential projects icon" style="max-width:30px;display:block;margin:0 auto" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/72x72/f0f0f0/999?text=Icon'">
-            <h4>Residential</h4>
-            <p style="color:var(--muted);font-size:12px">• Single-Family.</p>
-            <p style="color:var(--muted);font-size:12px">• Multi-Family.</p>
-            <p style="color:var(--muted);font-size:12px">• Container Home.</p>
-          </div>
-          <div class="project-card reveal" role="article">
-            <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Icon%20Commercial.png?raw=true" alt="Commercial projects icon" style="max-width:30px;display:block;margin:0 auto" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/72x72/f0f0f0/999?text=Icon'">
-            <h4>Commercial</h4>
-            <p style="color:var(--muted);font-size:12px">• Office.</p>
-            <p style="color:var(--muted);font-size:12px">• Retail.</p>
-            <p style="color:var(--muted);font-size:12px">• Restaurant.</p>
-          </div>
-          <div class="project-card reveal" role="article">
-            <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Icon%20Industrial%201.png?raw=true" alt="Industrial projects icon" style="max-width:30px;display:block;margin:0 auto" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/72x72/f0f0f0/999?text=Icon'">
-            <h4>Industrial</h4>
-            <p style="color:var(--muted);font-size:12px">• Airplane Hanger.</p>
-            <p style="color:var(--muted);font-size:12px">• Auto Service Center.</p>
-          </div>
-          <div class="project-card reveal" role="article">
-            <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Icon%20Institutional.png?raw=true" alt="Institutional projects icon" style="max-width:30px;display:block;margin:0 auto" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/72x72/f0f0f0/999?text=Icon'">
-            <h4>Institutional</h4>
-            <p style="color:var(--muted);font-size:12px">• School.</p>
-            <p style="color:var(--muted);font-size:12px">• Hospital.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="value" class="content-section" aria-labelledby="valueTitle">
-      <div class="container">
-        <h2 id="valueTitle" class="section-title">The Value We Deliver</h2>
-        <div class="value-list">
-          
-          <div class="value-item reveal">
-            <div class="value-icon">
-              <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/01%20Team%20Extension.png?raw=true" alt="Team Extension Icon">
-            </div>
-            <div class="value-content">
-              <h4>Team Extension</h4>
-              <p>We seamlessly integrate, adopting your tools and standards for reliable, headache-free support.</p>
-            </div>
-          </div>
-          
-          <div class="value-item reveal">
-            <div class="value-icon">
-              <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/02%20Transparency.png?raw=true" alt="Transparency Icon">
-            </div>
-            <div class="value-content">
-              <h4>Transparency</h4>
-              <p>Our centralized project files offer instant visibility, eliminating confusion and coordination risks.</p>
-            </div>
-          </div>
-          
-          <div class="value-item reveal">
-            <div class="value-icon">
-              <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/03%20Collaboration.png?raw=true" alt="Collaboration Icon">
-            </div>
-            <div class="value-content">
-              <h4>Proactive Collaboration</h4>
-              <p>Open communication and continuous improvement through digital tools and new methods keep projects competitive.</p>
-            </div>
-          </div>
-          
-          <div class="value-item reveal">
-            <div class="value-icon">
-              <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/04%20Automation.png?raw=true" alt="Automation Icon">
-            </div>
-            <div class="value-content">
-              <h4>Automated Workflows</h4>
-              <p>Automated tasks and quality checks boost efficiency, ensuring accurate, construction-ready design data.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="content-section">
-      <div class="container">
-        <h2 class="section-title">About Us</h2>
-        <div class="about-content">
-          <div class="about-text">
-            <p>Aarya Architects is your expert BIM implementation studio with over a decade of hands-on experience. We partner with architects, contractors, developers, and engineers to digitally transform their projects and improve the way buildings are designed, built, and managed for long-term operational success.</p>
-            <p>We act as your integrated, standards-driven BIM team, delivering the precision needed for a smooth project start to final handover, all without the hiring overhead. Whether you need a short-term model setup, template & family creation or full project coordination, we deliver precise.</p>
-          </div>
-          <div class="about-images-group" aria-hidden="false">
-            <div class="about-person-card reveal" role="article">
-              <div class="about-image"><img src="https://raw.githubusercontent.com/SuhasAkhare/Website-Assets/main/01%20Suhas.png" alt="Suhas Akhare - BIM Architect" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/140x140/f0f0f0/999?text=Photo'"></div>
-              <h4>Suhas Akhare</h4>
-              <p style="color:var(--muted);font-size:13px">BIM Architect</p>
-              <p style="font-size:12px;color:#4c4c4c">"Be yourself"</p>
-            </div>
-            <div class="about-person-card reveal" role="article">
-              <div class="about-image"><img src="https://raw.githubusercontent.com/SuhasAkhare/Website-Assets/main/02%20Akansha.png" alt="Akansha Maurya - Architect" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/140x140/f0f0f0/999?text=Photo'"></div>
-              <h4>Akansha Maurya</h4>
-              <p style="color:var(--muted);font-size:13px">Architect / Urban Designer</p>
-              <p style="font-size:12px;color:#4c4c4c">"All it takes is courage"</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    
     <section id="gallery" class="content-section">
       <div class="container">
         <h2 class="section-title">Gallery</h2>
@@ -1324,7 +1099,7 @@
     <section id="contact" class="content-section" aria-labelledby="contactTitle">
       <div class="container">
         <h2 id="contactTitle" class="section-title">Connect</h2>
-        <p style="color:var(--muted);font-size:15px;max-width:760px;margin-bottom:18px">Tell us about your project—scope, standards, and timeline. We typically reply within 24 hours with a tailored project approach.</p>
+        <p style="color:var(--muted);font-size:15px;max-width:1150px;margin-bottom:18px">Tell us about your project—scope, standards, and timeline. We typically reply within 24 hours with a tailored project approach.</p>
 
         <form class="contact-form" action="https://formsubmit.co/a85eab003ddc941a1ff01bddcd2e16d9" method="POST" aria-label="Contact form">
           <input type="hidden" name="_subject" value="BIM Service Request">
@@ -1366,7 +1141,7 @@
             <textarea id="message" name="Project Details" rows="5" placeholder="Briefly describe scope (e.g., LOD 350 for MEP, timeline, standards)." required></textarea>
           </div>
 
-          <div style="text-align:center;font-size:15px;margin-top:12px">
+          <div style="text-align:center;margin-top:12px">
             <button type="submit" class="cta-primary">Request BIM Proposal</button>
             <div class="note">Your data is confidential and used only for project communication.</div>
           </div>
@@ -1379,7 +1154,7 @@
     <div class="footer-content">
       <div class="footer-left">
         <div class="footer-branding">
-          <a href="#main" class="logo-group">
+          <a href="../#main" class="logo-group">
             <div class="footer-logo-container">
               <img src="https://github.com/SuhasAkhare/Website-Assets/blob/main/Aarya%20Architects%20Logo%20-%20Circular.png?raw=true" alt="Aarya Architects logo">
             </div>
@@ -1400,6 +1175,7 @@
           </div>
         </div>
       </div>
+    </div>
     <div class="footer-bottom">
       <p>&copy; <span id="copyright-year">2025</span> Aarya Architects. Based in India.</p>
     </div>
@@ -1561,5 +1337,4 @@
   </script>
 </body>
 </html>
-
 
