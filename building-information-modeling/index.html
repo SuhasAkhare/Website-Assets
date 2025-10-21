@@ -53,6 +53,8 @@
       --shadow-soft: 0 8px 24px rgba(11,11,11,0.06);
       --shadow-light: 0 4px 12px rgba(11,11,11,0.04);
     }
+    html {
+    font-size: 100%;}
 
     /* Basic reset */
     *{box-sizing:border-box}
@@ -66,6 +68,8 @@
       -moz-osx-font-smoothing:grayscale;
       line-height:1.6;
       -webkit-tap-highlight-color: transparent;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
     }
 
     /* Skip link for keyboard users */
@@ -97,7 +101,7 @@
       font-weight:300;
       letter-spacing:4px;
       text-transform:uppercase;
-      font-size:18px;
+      font-size:15px;
       margin:25px 0 25px 0;
       color:var(--text);
       
@@ -186,14 +190,14 @@
     .hero-heading{
       font-family:'Raleway',sans-serif;
       font-weight:600;
-      font-size:clamp(28px,6.5vw,44px);
+      font-size:25px;
       line-height:1.02;
       letter-spacing:2px;
       margin-bottom:18px;
       color:var(--accent);
     }
     .hero-sub{
-      font-weight:300;font-size:16px;color:#444;margin-bottom:28px;
+      font-weight:300;font-size:15px;color:#444;margin-bottom:28px;
       max-width:720px;margin-left:auto;margin-right:auto;
     }
     .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;padding: 5px}
@@ -302,15 +306,15 @@
       width:72px;height:72px;border-radius:10px;background:#ffffff;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:16px;
       flex-shrink:0;
     }
-    .service-card h3{font-family:'Raleway',sans-serif;font-size:18px;margin-bottom:8px;}
-    .service-card-content h3 {color: var(--text);}
-    .service-card-content p {color:var(--muted);font-size:14px;flex:1}
+    .service-card h3{font-family:'Raleway',sans-serif;font-size:15px;margin-bottom:8px;}
+    .service-card-content h3 {color: var(--text);font-size:15px;flex:1}
+    .service-card-content p {color:var(--muted);font-size:13px;flex:1}
     
     .service-card-details h3 {color:#fff}
-    .service-card-details p{color:rgba(255,255,255,0.88);font-size:14px;margin-bottom:12px}
+    .service-card-details p{color:rgba(255,255,255,0.88);font-size:13px;margin-bottom:12px}
     .deliverables{list-style:none;padding:0;margin:0 0 12px 0;font-size:13px;color:rgba(255,255,255,0.9)}
-    .deliverables li{margin-bottom:6px}
-    .small-note{font-size:13px;color:rgba(255,255,255,0.7);margin-top:auto}
+    .deliverables li{margin-bottom:6px;font-size:13px}
+    .small-note{font-size:11px;color:rgba(255,255,255,0.7);margin-top:auto}
     
     .service-icon img {
         width: 100%;
@@ -341,7 +345,7 @@
         font-weight: 600;
         text-align: center;
         flex-grow: 1;
-        font-size: 13px;
+        font-size: 12px;
         transition: background-color .2s ease, color .2s ease, border-color .2s ease;
     }
     .card-cta {
@@ -404,7 +408,7 @@
         text-decoration: none;
         padding: 10px 15px;
         border-radius: 8px;
-        font-size: 14px;
+        font-size: 13px;
         font-weight: 400; /* Lighter than main nav links */
         transition: background-color 0.2s ease;
         text-align: left;
@@ -441,20 +445,20 @@
     }
     .process-content h4 {
       font-family: 'Raleway', sans-serif;
-      font-size: 18px;
+      font-size: 15px;
       margin: 0px 50px 0px 0px;
       color: var(--text);
     }
     .process-content p {
-      margin: 0px 50px 0px 0px;
+      margin: 0px 0px 0px 0px;
       color: var(--muted);
-      font-size: 15px;
+      font-size: 13px;
       max-width: 80ch;
       align-items: center
     }
     .process-number {
       font-family: 'Raleway', sans-serif;
-      font-size: clamp(50px, 5vw, 48px);
+      font-size: 30px;
       font-weight: 600;
       color: #000000;
       line-height: 1;
@@ -469,7 +473,7 @@
       .process-number {
         align-self: flex-end;
         margin-top: -30px; /* Pull number up visually */
-        font-size: 36px;
+        font-size: 30px;
       }
     }
 
@@ -498,14 +502,14 @@
     }
     .value-content h4 {
       font-family: 'Raleway', sans-serif;
-      font-size: 18px;
+      font-size: 15px;
       margin-bottom: 4px;
       color: var(--text);
     }
     .value-content p {
       margin: 0;
       color: var(--muted);
-      font-size: 15px;
+      font-size: 13px;
       max-width: 80ch;
     }
     @media (max-width: 600px) {
@@ -518,11 +522,11 @@
     /* Projects grid */
     .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;justify-content: center;align-content: center;}
     .project-card{background:#fff;border-radius:18px;padding:18px;border:1px solid #f0f0f0;text-align:center;box-shadow:var(--shadow-light);transition:transform .18s}
-    .project-card h4{font-family:'Raleway',sans-serif;font-size:13px;margin:10px;text-transform:uppercase;letter-spacing:1px}
+    .project-card h4{font-family:'Raleway',sans-serif;font-size:14px;margin:10px;text-transform:uppercase;letter-spacing:1px}
 
     /* About */
     .about-content{display:column;gap:36px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-    .about-text{flex:1;min-width:260px}
+    .about-text{flex:1;min-width:260px;font-size:14px}
     .about-images-group{display: flex;padding:10px;gap:50px;align-items: center;flex-wrap: nowrap;flex-direction: row;justify-content: center;}
     .about-person-card{text-align:center;min-width:160px}
     .about-image{width:140px;height:140px;border-radius:50%;overflow:hidden;margin:0 auto 10px;box-shadow:var(--shadow-light)}
@@ -536,7 +540,7 @@
     }
     .gallery-item-title {
       font-family: 'Raleway', sans-serif;
-      font-size: 18px;
+      font-size: 15px;
       margin-bottom: 8px;
       font-weight: 600;
     }
@@ -569,9 +573,9 @@
         padding: 0;
         border-radius: 50%;
         cursor: pointer;
-        font-size: 24px;
-        width: 44px;
-        height: 44px;
+        font-size: 25px;
+        width: 40px;
+        height: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -601,9 +605,9 @@
     .contact-form{background:#fff;padding:30px 50px;border-radius:12px;box-shadow:var(--shadow-soft);max-width:760px;margin:0 auto}
     .form-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
     .form-group{margin-bottom:14px}
-    label{display:block;font-weight:600;margin-bottom:8px}
+    label{display:block;font-size:13px;font-weight:600;margin-bottom:8px}
     input[type="text"],input[type="email"],select,textarea{
-      width:100%;padding:12px;border:1px solid #e6e6e6;border-radius:8px;font-size:15px;font-family:inherit;
+      width:100%;padding:12px;border:1px solid #e6e6e6;border-radius:8px;font-size:12px;font-family:inherit;
     }
     input:focus,select:focus,textarea:focus{outline:2px solid rgba(0,0,0,0.06);border-color:#bfbfbf}
     .note{font-size:13px;color:var(--muted);margin-top:20px;text-align:center}
@@ -657,7 +661,7 @@
     }
     .footer-site-title {
       font-family: 'Raleway', sans-serif;
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 600;
     }
     .footer-tagline {
@@ -1334,4 +1338,6 @@
   </script>
 </body>
 </html>
+
+
 
