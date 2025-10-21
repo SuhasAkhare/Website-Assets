@@ -261,12 +261,12 @@
 
     /* content sections */
     .content-section{padding:var(--section-gap) 10px}
-    .container{max-width:var(--max-content-width);margin:0 auto;padding:0 30px}
+    .container{max-width:var(--max-content-width);margin:0 auto;padding:0px 20px}
 
     /* Services grid */
     .services-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
       gap:22px;
       align-items:stretch;
     }
@@ -280,7 +280,7 @@
       padding: 20px;
       display: flex;
       flex-direction: column;
-      min-height: 300px;
+      min-height: 250px;
       transition: transform 0.3s cubic-bezier(.2,.9,.25,1), box-shadow 0.3s cubic-bezier(.2,.9,.25,1);
     }
 
@@ -300,7 +300,7 @@
       color: #fff;
       padding: 20px;
       opacity: 0;
-      min-height: 300px;
+      min-height: 250px;
       transform: translateY(10px);
       transition: opacity 0.4s ease, transform 0.4s ease;
       display: flex;
@@ -918,7 +918,7 @@
     <section id="services" class="content-section">
       <div class="container">
         <h2 class="section-title">The BIM Services You Need</h2>
-        <p style="color:var(--muted);font-size:15px;margin-bottom:15px;max-width:1150px">BIM support. We integrate seamlessly as your dedicated remote BIM team, ensuring your models are perfectly managed, coordinated, and construction-ready.</p>
+        <p style="color:var(--muted);font-size:15px;margin-bottom:20px;max-width:1150px">BIM support. We integrate seamlessly as your dedicated remote BIM team, ensuring your models and drawings are perfectly managed, coordinated, and construction-ready.</p>
 
         <div class="services-grid" role="list">
 
@@ -958,7 +958,7 @@
                 <li>• Detailed Clash Reports</li>
                 <li>• Resolved Multi-Discipline Model</li>
               </ul>
-              <div class="small-note">Tools :Autodesk Revvit • Naviswork Manage • ACC Model Coordination</div>
+              <div class="small-note">Tools :Autodesk Revit • Naviswork Manage • ACC Model Coordination</div>
               <div class="card-actions">
                   <a href="bim-details.html" rel="noopener noreferrer" class="card-cta-secondary">
                     Learn More
