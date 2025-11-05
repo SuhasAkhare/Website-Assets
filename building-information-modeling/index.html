@@ -678,82 +678,6 @@
     .about-image{width:140px;height:140px;border-radius:50%;overflow:hidden;margin:0 auto 10px;box-shadow:var(--shadow-light)}
     .about-image img{width:100%;height:100%;object-fit:cover}
 
-    /* Gallery Carousel Grid */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 22px;
-      justify-content: center;
-    }
-    .gallery-item-title {
-      font-family: 'Raleway', sans-serif;
-      font-size: 15px;
-      margin-bottom: 8px;
-      text-align: center;
-      font-weight: 600;
-    }
-    .carousel-container {
-      position: relative;
-      border-radius: 0px;
-      overflow: hidden;
-      text-align: center;
-    }
-    .carousel-slides {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-      min-width: 100%;
-    }
-    .carousel-slide {
-      min-width: 100%;
-      position: relative; /* for caption positioning */
-      height: 400px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .carousel-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-    .carousel-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(150, 150, 150, 20%);
-        color: black;
-        border: 1px solid rgba(150, 150, 150, 20%);
-        padding: 0;
-        border-radius: 50%;
-        cursor: pointer;
-        font-size: 25px;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        line-height: 1;
-        transition: background-color 0.2s ease, backdrop-filter 0.2s ease;
-        z-index: 10;
-        backdrop-filter: blur(4px);
-    }
-    .carousel-btn:hover, .carousel-btn:focus-visible {
-        background-color: rgba(255, 255, 255, 0.3);
-    }
-    .carousel-btn.prev {
-        left: 10px;
-    }
-    .carousel-btn.next {
-        right: 10px;
-    }
-    .carousel-btn svg {
-      width: 24px;
-      height: 24px;
-      stroke-width: 2.5;
-    }
-    
-    .gallery-caption{position:absolute;left:0;right:0;bottom:0;padding:18px;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.6));color:#fff}
-
     /* Contact form */
     .contact-form{background:#fff;padding:30px 50px;border-radius:12px;box-shadow:var(--shadow-soft);max-width:760px;margin:0 auto}
     .form-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
@@ -1026,7 +950,6 @@
             </div>
           </div>
           <a href="../#about" class="nav-link">About</a>
-          <a href="../#gallery" class="nav-link">Gallery</a>
           <a href="#contact" class="cta-ghost">Connect</a>
         </nav>
 
@@ -1258,37 +1181,6 @@
         </div>
       </div>
     </section>
-    
-    <section id="gallery" class="content-section">
-      <div class="container">
-        <h2 class="section-title">Gallery</h2>
-        <div class="gallery-grid">
-
-          <!-- Carousel 1: Multi-Family Residence -->
-          <div class="reveal">
-            <h3 class="gallery-item-title"></h3>
-            <div class="carousel-container" role="region" aria-label="Residential projects gallery">
-              <div class="carousel-slides">
-                <div class="carousel-slide" role="group" aria-label="slide 1 of 4">
-                  <img src="../01%20BIM%203D%20view.png" alt="Modern residential exterior" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/400x280/f0f0f0/999?text=Image'">
-                </div>
-                <div class="carousel-slide" role="group" aria-label="slide 2 of 4">
-                  <img src="../02%20BIM%20Coordinated%20View.jpg" alt="Spacious modern living room" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/400x280/f0f0f0/999?text=Image'">
-                </div>
-                <div class="carousel-slide" role="group" aria-label="slide 3 of 4">
-                  <img src="../03%20BIM%20Mech-Plumb.jpg" alt="Modern kitchen interior" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/400x280/f0f0f0/999?text=Image'">
-                </div>
-                <div class="carousel-slide" role="group" aria-label="slide 4 of 4">
-                  <img src="../04%20BIM%20CMK%20Views.JPG" alt="House exterior with swimming pool" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/400x280/f0f0f0/999?text=Image'">
-                </div>
-              </div>
-              <button class="carousel-btn prev" aria-label="Previous slide"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-              <button class="carousel-btn next" aria-label="Next slide"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section id="contact" class="content-section" aria-labelledby="contactTitle">
       <div class="container">
@@ -1453,51 +1345,6 @@
       } else {
           revealElements.forEach(el => el.classList.add('is-visible'));
       }
-      
-      /**
-       * ------------------------------------------------------------------------
-       * 4. Gallery Carousel
-       * ------------------------------------------------------------------------
-       */
-      const carousels = document.querySelectorAll('.carousel-container');
-      carousels.forEach(carousel => {
-        const slides = carousel.querySelector('.carousel-slides');
-        const prevBtn = carousel.querySelector('.prev');
-        const nextBtn = carousel.querySelector('.next');
-        const allSlides = carousel.querySelectorAll('.carousel-slide');
-        const slideCount = allSlides.length;
-        let currentIndex = 0;
-
-        function updateAria() {
-            allSlides.forEach((slide, i) => {
-                slide.setAttribute('aria-hidden', i !== currentIndex);
-            });
-        }
-
-        function showSlide(index) {
-          if (index >= slideCount) {
-            currentIndex = 0;
-          } else if (index < 0) {
-            currentIndex = slideCount - 1;
-          } else {
-            currentIndex = index;
-          }
-          const offset = -currentIndex * 100;
-          slides.style.transform = `translateX(${offset}%)`;
-          updateAria();
-        }
-
-        nextBtn.addEventListener('click', () => {
-          showSlide(currentIndex + 1);
-        });
-
-        prevBtn.addEventListener('click', () => {
-          showSlide(currentIndex - 1);
-        });
-
-        // Initialize
-        showSlide(0);
-      });
 
       /**
        * ------------------------------------------------------------------------
